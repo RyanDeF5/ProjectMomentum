@@ -1,0 +1,48 @@
+p{
+  font-size: 20px;
+}
+
+#header{
+  text-align: center;
+  height: 200px;
+  /* border-color: red;
+  border-style: solid;
+  border-width: 3px; */
+}
+
+#body{
+  text-align: center;
+  height: 900px;
+  /* border-color: red;
+  border-style: solid;
+  border-width: 3px; */
+}
+
+#topMessage{
+  padding-top: 74px; 
+  font-size: 35px;
+}
+
+#stockInfoRow{
+  justify-content: center;
+}
+
+#fieldRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#submitButton{
+  margin-left: 20px;
+  font-size: 15px;
+  width: 150px;
+}
+
+.entryField{
+  margin-top: 0; margin-bottom: 0; margin-left: 10px;
+  font-size: 14px;
+}
+
