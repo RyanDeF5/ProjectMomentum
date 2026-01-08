@@ -8,13 +8,13 @@
       <script src="front.js" defer></script>
   </head>
   <body>
-      <main>
+      <main> 
         <div id="header">
           <p id="topMessage">Welcome to The Momentum Project</p>
         </div>
-        <div id="body">
+        <body id="body">
           <p>Please Enter The Stock Info Here:</p>
-          <div id="stockInfoRow">
+          <section id="stockInfoRow">
             <div id="idRow">
             </div>
             <div id="fieldRow">
@@ -26,8 +26,17 @@
               <input class="entryField" id="float" placeholder="Float (Share #)">
               <button id="submitButton">Submit</button>
             </div>
-          </div>
-        </div>
+          </section>
+          <section id="summarySection">
+            <p>Summary:</p>
+            <div id="summaryBox">
+              <div class="summaryItem" id="priceBox">Price Goes Here</div>
+              <div class="summaryItem" id="rvolBox">RVOL Goes Here</div>
+              <div class="summaryItem" id="percentUpBox">% Up Today Goes Here</div>
+              <div class="summaryItem" id="floatBox">Float Goes Here</div>
+            </div>
+          </section>
+        </body>
       </main>
       <footer>
           <p>&copy; 2026 My Website Project</p>
