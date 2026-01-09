@@ -62,7 +62,7 @@
     let position = (percentChange > 0) ? "up" : "down" 
 
     summaryPrice.textContent = `Price: $${stockData.currentPrice}`; 
-    summaryRVOL.textContent = `The relative volume is ${RVOL}x above average`; 
+    summaryRVOL.textContent = `Rel Volume: ${RVOL}x above average`; 
     summaryPercentUp.textContent = `${stockData.symbol} is ${percentChange}% ${position} for the day`; 
     summaryFloat.textContent = `${stockData.float} Shares`; 
     backgroundTicker.textContent = `${stockData.symbol}`;
@@ -141,10 +141,14 @@
     }
 
     function flashIndicateField(field){
-      field.style.color = "#02a02cff"; 
+      field.style.backgroundColor = "#a2ffa3ff"; 
       setTimeout(()=>{
-        field.style.transition = "color 0.5s ease-out"
-        field.style.color = "black"; 
-      }, 500)
+        field.style.transition = "background-color 0.5s ease-out"
+        field.style.backgroundColor = "white"; 
+      }, 200)
+
+      setTimeout(()=>{
+        field.style.transition = "background-color 0.0s ease-out"
+      }, 750)
     }
   }
