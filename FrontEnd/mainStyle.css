@@ -34,7 +34,7 @@ p{
 
 #fieldRow{
   display: grid;
-  grid-template-columns: 190px 200px 190px 200px;
+  grid-template-columns: 200px 200px 200px 200px;
   grid-template-rows: repeat(4, 40px);
   gap: 15px;
   justify-content: center;
@@ -47,7 +47,7 @@ p{
   grid-column: span 4;
   font-family: Moderat-Normal; 
   height: 45px;
-  font-size: 15px;
+  font-size: 19px;
   color: white;   
   background-color: #747b7c8d;
   transition: background-color .3s ease-in-out, color .3s ease-in-out;
@@ -60,14 +60,17 @@ p{
   color: black;
 }
 
-.entryField{
+.entryField, .entryFieldNumber{
   margin-top: 2px;
   height: 33px; 
-  font-size: 14px;
-  font-family: Moderat-Normal;
+  font-size: 17px;
+  font-family: Moderat-Medium;
+  color: black;
+  transition: color 0s ease-out;
 } 
 
 .entryLabel{
   margin-top: 10px;
+  font-size: 17px;
   font-family: Moderat-Normal;
 }

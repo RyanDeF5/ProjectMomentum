@@ -22,22 +22,23 @@
             <div id="fieldRow">
               <div class="entryLabel" >Enter Stock Symbol:</div>
               <input class="entryField" id="symbol"  placeholder="e.g. APPL, MSFT">
-              <div class="entryLabel" >Enter Current Price:</div>
-              <input class="entryField" id="currentPrice" placeholder="Current Trading Price">
-              <div class="entryLabel" >Recent Closing Price :</div>
-              <input class="entryField" id="lastPrice" placeholder="Enter Last Close Price">
               <div class="entryLabel" >Current Trading Volume:</div>
-              <input class="entryField" id="volume" placeholder="Volume">
+              <input class="entryFieldNumber" id="volume" placeholder="Volume">
+              <div class="entryLabel" >Enter Current Price:</div>
+              <input class="entryFieldNumber" id="currentPrice" placeholder="Current Trading Price">  
               <div class="entryLabel" >3 Month Average Volume:</div>
-              <input class="entryField" id="averageVolume"  placeholder="Average Volume">
+              <input class="entryFieldNumber" id="averageVolume"  placeholder="Average Volume">
+              <div class="entryLabel" >Recent Closing Price :</div>
+              <input class="entryFieldNumber" id="lastPrice" placeholder="Enter Last Close Price">
               <div class="entryLabel" >Share Count/Float:</div>
-              <input class="entryField" id="float" placeholder="'No' If Not Avalible">
+              <input class="entryFieldNumber" id="float" placeholder="'No' If Not Avalible">
               <button id="submitButton">Submit</button>
             </div>
           </section>
           <section id="summarySection">
             <p>Summary:</p>
             <div id="summaryBox">
+              <div id="backgroundTicker">STCK</div>
               <div class="summaryItem" id="percentUpBox">% Up Today Goes Here</div>
               <div class="summaryItem" id="rvolBox">RVOL Goes Here</div>
               <div class="summaryItem" id="priceBox">Price Goes Here</div>
