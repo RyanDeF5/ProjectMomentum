@@ -5,6 +5,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Project Momentum</title>
       <link rel="stylesheet" href="mainStyle.css">
+      <link rel="stylesheet" href="summaryBox.css">
+      <link rel="stylesheet" href="background.css">
       <script src="front.js" defer></script>
   </head>
   <body>
@@ -18,21 +20,27 @@
             <div id="idRow">
             </div>
             <div id="fieldRow">
-              <input class="entryField" id="symbol"  placeholder="Enter Stock Symbol">
-              <input class="entryField" id="currentPrice"  step="0.01" placeholder="Enter Current Price">
-              <input class="entryField" id="lastPrice" step="0.01" placeholder="Enter Last Close Price">
+              <div class="entryLabel" >Enter Stock Symbol:</div>
+              <input class="entryField" id="symbol"  placeholder="e.g. APPL, MSFT">
+              <div class="entryLabel" >Enter Current Price:</div>
+              <input class="entryField" id="currentPrice" placeholder="Current Trading Price">
+              <div class="entryLabel" >Recent Closing Price :</div>
+              <input class="entryField" id="lastPrice" placeholder="Enter Last Close Price">
+              <div class="entryLabel" >Current Trading Volume:</div>
               <input class="entryField" id="volume" placeholder="Volume">
+              <div class="entryLabel" >3 Month Average Volume:</div>
               <input class="entryField" id="averageVolume"  placeholder="Average Volume">
-              <input class="entryField" id="float" placeholder="Float (Share #)">
+              <div class="entryLabel" >Share Count/Float:</div>
+              <input class="entryField" id="float" placeholder="'No' If Not Avalible">
               <button id="submitButton">Submit</button>
             </div>
           </section>
           <section id="summarySection">
             <p>Summary:</p>
             <div id="summaryBox">
-              <div class="summaryItem" id="priceBox">Price Goes Here</div>
-              <div class="summaryItem" id="rvolBox">RVOL Goes Here</div>
               <div class="summaryItem" id="percentUpBox">% Up Today Goes Here</div>
+              <div class="summaryItem" id="rvolBox">RVOL Goes Here</div>
+              <div class="summaryItem" id="priceBox">Price Goes Here</div>
               <div class="summaryItem" id="floatBox">Float Goes Here</div>
             </div>
           </section>

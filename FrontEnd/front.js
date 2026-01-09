@@ -26,13 +26,15 @@
 
 
   function submit(){
+    if (document.querySelector(".entryField").value === "")
+      return
     getAllFields();
     sendToBackend(stockData); 
     // clearAllFields(); 
     calculateSummary();
   }
 
-  // Gets all fields off of the website before storeing them within the stock data 
+  // Gets all fields off of the website and stores them within the stock data object 
   function getAllFields(){
     stockData.symbol = symbolField.value.trim().toUpperCase(); 
     stockData.currentPrice = Number(currentPriceField.value);
@@ -54,11 +56,13 @@
   function calculateSummary(){
 
     let RVOL = (stockData.volume / stockData.averageVolume).toFixed(1)
-    let percentUp = (((stockData.currentPrice - stockData.lastClose) / stockData.lastClose) * 100).toFixed(1);
+    let percentChange = (((stockData.currentPrice - stockData.lastClose) / stockData.lastClose) * 100).toFixed(1);
+
+    let position = (percentChange > 0) ? "up" : "down" 
 
     summaryPrice.textContent = `Price: $${stockData.currentPrice}`; 
     summaryRVOL.textContent = `The relative volume is ${RVOL}x above average`; 
-    summaryPercentUp.textContent = `${stockData.symbol} is ${percentUp}% up for the day`; 
+    summaryPercentUp.textContent = `${stockData.symbol} is ${percentChange}% ${position} for the day`; 
     summaryFloat.textContent = `${stockData.float} Shares`; 
   }
 

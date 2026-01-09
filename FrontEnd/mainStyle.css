@@ -1,5 +1,7 @@
 p{
-  font-size: 20px;
+  font-size: 26px;
+  font-family: Moderat-Normal;
+  color: white;
 }
 
 #header{
@@ -21,53 +23,51 @@ p{
 #topMessage{
   padding-top: 74px; 
   font-size: 35px;
+  font-family: Moderat-Bold;
 }
 
 #stockInfoRow{
   justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 #fieldRow{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 190px 200px 190px 200px;
+  grid-template-rows: repeat(4, 40px);
+  gap: 15px;
   justify-content: center;
-  align-items: center;
-  width: 100%;
+  /* border-color: #1159d2;
+  border-style: solid;
+  border-width: 3px; */
 }
 
 #submitButton{
-  margin-left: 20px;
+  grid-column: span 4;
+  font-family: Moderat-Normal; 
+  height: 45px;
   font-size: 15px;
-  width: 150px;
+  color: white;   
+  background-color: #747b7c8d;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  border-radius: 50px;
+  border: none;
+}
+
+#submitButton:hover{
+  background-color: #1fd9fe;
+  color: black;
 }
 
 .entryField{
-  margin-top: 0; margin-bottom: 0; margin-left: 10px;
+  margin-top: 2px;
+  height: 33px; 
   font-size: 14px;
-}
+  font-family: Moderat-Normal;
+} 
 
-#summarySection{
-  display: flex;
-  flex-direction: column;  
-  align-items: center;     
+.entryLabel{
+  margin-top: 10px;
+  font-family: Moderat-Normal;
 }
-
-#summaryBox{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  align-items: center;
-  gap: 12px;
-  height: 150px;
-  width: 1000px;
-  border-color: #1159d2;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 20px;
-}
-
-.summaryItem{
-  position: relative;
-  font-size: 22px;
-}
-
