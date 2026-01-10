@@ -1,0 +1,28 @@
+#body{
+    background-color: #ececec;
+}
+
+#appContainer{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#startPage{
+    opacity: 100;
+}
+
+#summaryPage{
+    opacity: 0;
+    z-index: -1;
+}

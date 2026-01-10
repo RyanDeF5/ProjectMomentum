@@ -1,7 +1,7 @@
 p{
   font-size: 26px;
   font-family: Moderat-Normal;
-  color: white;
+  color: #050311;
 }
 
 #header{
@@ -29,7 +29,7 @@ p{
 #stockInfoRow{
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #050311;
 }
 
 #fieldRow{

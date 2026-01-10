@@ -6,35 +6,50 @@
       <title>Project Momentum</title>
       <link rel="stylesheet" href="mainStyle.css">
       <link rel="stylesheet" href="summaryBox.css">
-      <link rel="stylesheet" href="background.css">
-      <script src="front.js" defer></script>
+      <link rel="stylesheet" href="backgroundPages.css">
+      <script type="module" src="front.js" defer></script>
   </head>
-  <body>
-      <main> 
-        <div id="header">
-          <p id="topMessage">Welcome to The Momentum Project</p>
-        </div>
-        <body id="body">
-          <p>Please Enter The Stock Info Here:</p>
+  <body id="body">
+
+    <div id="appContainer">
+      <main>
+        <section id="startPage" class="page">
+          <header id="header">
+            <p id="topMessage">Welcome to The Momentum Project</p>
+          </header>
+
           <section id="stockInfoRow">
             <div id="idRow">
             </div>
+
             <div id="fieldRow">
-              <div class="entryLabel" >Enter Stock Symbol:</div>
-              <input class="entryField" id="symbol"  placeholder="e.g. APPL, MSFT">
-              <div class="entryLabel" >Current Trading Volume:</div>
+              <div class="entryLabel">Enter Stock Symbol:</div>
+              <input class="entryField" id="symbol" placeholder="e.g. APPL, MSFT">
+
+              <div class="entryLabel">Current Trading Volume:</div>
               <input class="entryFieldNumber" id="volume" placeholder="Volume">
-              <div class="entryLabel" >Enter Current Price:</div>
-              <input class="entryFieldNumber" id="currentPrice" placeholder="Current Trading Price">  
-              <div class="entryLabel" >3 Month Average Volume:</div>
-              <input class="entryFieldNumber" id="averageVolume"  placeholder="Average Volume">
-              <div class="entryLabel" >Recent Closing Price :</div>
+
+              <div class="entryLabel">Enter Current Price:</div>
+              <input class="entryFieldNumber" id="currentPrice" placeholder="Current Trading Price">
+
+              <div class="entryLabel">3 Month Average Volume:</div>
+              <input class="entryFieldNumber" id="averageVolume" placeholder="Average Volume">
+
+              <div class="entryLabel">Recent Closing Price :</div>
               <input class="entryFieldNumber" id="lastPrice" placeholder="Enter Last Close Price">
-              <div class="entryLabel" >Share Count/Float:</div>
+
+              <div class="entryLabel">Share Count/Float:</div>
               <input class="entryFieldNumber" id="float" placeholder="'No' If Not Avalible">
+
               <button id="submitButton">Submit</button>
             </div>
           </section>
+          <footer>
+            <p>&copy; 2026 My Website Project</p>
+          </footer>
+        </section>
+
+        <section id="summaryPage" class="page">
           <section id="summarySection">
             <p>Summary:</p>
             <div id="summaryBox">
@@ -45,10 +60,12 @@
               <div class="summaryItem" id="floatBox">Float Goes Here</div>
             </div>
           </section>
-        </body>
+          <!-- <button id="backButton">Back</button> -->
+          <footer>
+            <p>&copy; 2026 My Website Project</p>
+          </footer>
+        </section>
       </main>
-      <footer>
-          <p>&copy; 2026 My Website Project</p>
-      </footer>
+    </div>
   </body>
 </html>
