@@ -1,7 +1,18 @@
+:root {
+  --asphalt-green: #c3fb12;
+  --asphalt-pink: #ff0054;
+  --asphalt-grey: #3f4b57;
+  --asphalt-black: #182128;
+}
+
 p{
   font-size: 26px;
-  font-family: Moderat-Normal;
+  font-family: Rajdhani-Semi-Bold;
   color: #050311;
+}
+
+.themeHighlight{
+  color: #ff0054;
 }
 
 #header{
@@ -23,7 +34,7 @@ p{
 #topMessage{
   padding-top: 74px; 
   font-size: 35px;
-  font-family: Moderat-Bold;
+  font-family: Rajdhani-Bold;
 }
 
 #stockInfoRow{
@@ -43,28 +54,11 @@ p{
   border-width: 3px; */
 }
 
-#submitButton{
-  grid-column: span 4;
-  font-family: Moderat-Normal; 
-  height: 45px;
-  font-size: 19px;
-  color: white;   
-  background-color: #747b7c8d;
-  transition: background-color .3s ease-in-out, color .3s ease-in-out;
-  border-radius: 50px;
-  border: none;
-}
-
-#submitButton:hover{
-  background-color: #1fd9fe;
-  color: black;
-}
-
 .entryField, .entryFieldNumber{
   margin-top: 2px;
   height: 33px; 
   font-size: 17px;
-  font-family: Moderat-Medium;
+  font-family: Rajdhani-Medium;
   color: black;
   background-color: white;
   transition: background-color 0.0s ease-out;
@@ -73,5 +67,5 @@ p{
 .entryLabel{
   margin-top: 10px;
   font-size: 17px;
-  font-family: Moderat-Normal;
+  font-family: Rajdhani-Semi-Bold;
 }

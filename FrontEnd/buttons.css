@@ -1,0 +1,56 @@
+.themeButton{
+  font-family: Rajdhani-Semi-Bold; 
+  border: none;
+  width:  300px;
+  height: 50px;
+}
+
+.themeButton.typeDisabled{
+  background-color: #353739;
+  color: #868487;
+  border: solid; border-color: #868487; border-width: 3px;
+}
+
+.themeButton.typeBuy{
+  background-color: var(--asphalt-green);
+  color: var(--asphalt-black);
+  border: solid; border-color: var(--asphalt-black); border-width: 2px;
+}
+.themeButton.typeBuy:active{
+  background-color: var(--asphalt-black);
+  color: var(--asphalt-green);
+  border-color: var(--asphalt-green); 
+}
+
+.themeButton.typeNormal{
+  background-color: white;
+  color: #3f4b57;
+  border: solid; border-color: #3f4b57; border-width: 3px;
+}
+.themeButton.typeNormal:hover{
+  background-color: #3f4b57;
+  color: white;
+}
+
+.cornerNotch{
+  position: relative; 
+  bottom: -16px;          
+  right: -109px;
+}
+
+#submitButton, #SwitchPage{
+  grid-column: 2 / 4;
+  height: 50px;
+  font-size: 21px;
+  /* transition: background-color .3s ease-in-out, color .3s ease-in-out; */
+}
+
+#SwitchPage{  
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
+}
+
+#backButton{
+  margin-top: 50px;
+  font-size: 21px;
+}

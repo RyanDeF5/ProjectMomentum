@@ -7,15 +7,16 @@
       <link rel="stylesheet" href="mainStyle.css">
       <link rel="stylesheet" href="summaryBox.css">
       <link rel="stylesheet" href="backgroundPages.css">
+      <link rel="stylesheet" href="buttons.css">
       <script type="module" src="front.js" defer></script>
   </head>
   <body id="body">
 
     <div id="appContainer">
       <main>
-        <section id="startPage" class="page">
+        <section id="startPage" class="page active">
           <header id="header">
-            <p id="topMessage">Welcome to The Momentum Project</p>
+            <p id="topMessage">Welcome to The <span class="themeHighlight">Momentum</span> Project</p>
           </header>
 
           <section id="stockInfoRow">
@@ -23,25 +24,25 @@
             </div>
 
             <div id="fieldRow">
-              <div class="entryLabel">Enter Stock Symbol:</div>
-              <input class="entryField" id="symbol" placeholder="e.g. APPL, MSFT">
+              <div class="entryLabel">ENTER STOCK SYMBOL:</div>
+              <input class="entryField" id="symbol" placeholder="E.G. APPL, MSFT">
 
-              <div class="entryLabel">Current Trading Volume:</div>
-              <input class="entryFieldNumber" id="volume" placeholder="Volume">
+              <div class="entryLabel">CURRENT TRADING VOLUME:</div>
+              <input class="entryFieldNumber" id="volume" placeholder="VOLUME">
 
-              <div class="entryLabel">Enter Current Price:</div>
-              <input class="entryFieldNumber" id="currentPrice" placeholder="Current Trading Price">
+              <div class="entryLabel">ENTER CURRENT PRICE:</div>
+              <input class="entryFieldNumber" id="currentPrice" placeholder="CURRENT TRADING PRICE">
 
-              <div class="entryLabel">3 Month Average Volume:</div>
-              <input class="entryFieldNumber" id="averageVolume" placeholder="Average Volume">
+              <div class="entryLabel">3 MONTH AVERAGE VOLUME:</div>
+              <input class="entryFieldNumber" id="averageVolume" placeholder="AVERAGE VOLUME">
 
-              <div class="entryLabel">Recent Closing Price :</div>
-              <input class="entryFieldNumber" id="lastPrice" placeholder="Enter Last Close Price">
+              <div class="entryLabel">RECENT CLOSING PRICE:</div>
+              <input class="entryFieldNumber" id="lastPrice" placeholder="LAST CLOSING PRICE">
 
-              <div class="entryLabel">Share Count/Float:</div>
-              <input class="entryFieldNumber" id="float" placeholder="'No' If Not Avalible">
-
-              <button id="submitButton">Submit</button>
+              <div class="entryLabel">SHARE COUNT/FLOAT:</div>
+              <input class="entryFieldNumber" id="float" placeholder="'No' IF NOT AVALIBLE">
+              <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
+              <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
             </div>
           </section>
           <footer>
@@ -60,7 +61,7 @@
               <div class="summaryItem" id="floatBox">Float Goes Here</div>
             </div>
           </section>
-          <!-- <button id="backButton">Back</button> -->
+          <button id="backButton" class="themeButton typeNormal">BACK</button>
           <footer>
             <p>&copy; 2026 My Website Project</p>
           </footer>

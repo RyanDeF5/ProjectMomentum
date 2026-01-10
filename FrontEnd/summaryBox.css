@@ -1,20 +1,20 @@
 @font-face {
-  font-family: Moderat-Bold;
-  src: url('/fonts/Moderat-Black.ttf') format('truetype');
+  font-family: Rajdhani-Bold;
+  src: url('/fonts/Rajdhani-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Moderat-Normal;
-  src: url('/fonts/Moderat-Regular.ttf') format('truetype');
+  font-family: Rajdhani-Semi-Bold;
+  src: url('/fonts/Rajdhani-SemiBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Moderat-Medium;
-  src: url('/fonts/Moderat-Medium.ttf') format('truetype');
+  font-family: Rajdhani-Medium;
+  src: url('/fonts/Rajdhani-Medium.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -22,8 +22,8 @@
 #summarySection{
   display: flex;
   flex-direction: column;  
-  font-family: Moderat-Medium;  
-  color: #050311;   
+  font-family: Rajdhani-Medium;  
+  color: var(--asphalt-black);   
 }
 
 #summaryBox{
@@ -35,7 +35,7 @@
   height: 160px;
   width: 1000px;
   text-align: left;
-  border-color: #1159d2;
+  border-color: var(--asphalt-grey);
   border-style: solid;
   border-width: 5px;
   border-radius: 20px;
@@ -66,7 +66,7 @@
 
 #backgroundTicker{
     font-size: 150px;
-    color: #1fd9fe;
+    color: var(--asphalt-pink);
     opacity: 10%;
     grid-column: 19 / 29;
     grid-row: 3 / 14;

@@ -16,13 +16,12 @@
     height: 100vh;
     opacity: 0;
     transition: opacity 0.2s ease;
+    pointer-events: none;
 }
 
-#startPage{
-    opacity: 100;
+.page.active{
+  opacity: 100;
+  z-index: 10;
+  pointer-events: all;
 }
 
-#summaryPage{
-    opacity: 0;
-    z-index: -1;
-}
