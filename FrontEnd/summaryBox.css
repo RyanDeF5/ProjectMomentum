@@ -20,6 +20,7 @@
 }
 
 #summarySection{
+  margin-top: 300px;
   display: flex;
   flex-direction: column;  
   font-family: Rajdhani-Medium;  

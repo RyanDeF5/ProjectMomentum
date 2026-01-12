@@ -1,6 +1,6 @@
   import {StartPage} from './startPage.js';
   import {SummaryPage} from './summaryPage.js';
-  import {stockData} from './tempData.js';
+  import {stockData, updateClock} from './tempData.js';
 
   // Bind the submit button to the getAllFields method
   document.getElementById("submitButton").addEventListener("click", submit)
@@ -27,6 +27,7 @@
   function update(){
     // Check if the numerical fields contain value indicators e.g. M (million), K (thousand), ect.
     start_page.update(); 
+    updateClock(); 
   }
 
   function goToPage(targetPageId) {

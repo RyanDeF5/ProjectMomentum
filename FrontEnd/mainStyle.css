@@ -9,18 +9,17 @@ p{
   font-size: 26px;
   font-family: Rajdhani-Semi-Bold;
   color: #050311;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .themeHighlight{
   color: #ff0054;
 }
 
-#header{
-  text-align: center;
-  height: 200px;
-  /* border-color: red;
-  border-style: solid;
-  border-width: 3px; */
+#topPage{
+  display: grid;
+  margin-top: 40px;
 }
 
 #body{
@@ -32,12 +31,17 @@ p{
 }
 
 #topMessage{
-  padding-top: 74px; 
   font-size: 35px;
   font-family: Rajdhani-Bold;
+  padding-bottom: 60px;
+}
+
+.clock{
+  font-size: 75px;
 }
 
 #stockInfoRow{
+  margin-top: 75px;
   justify-content: center;
   align-items: center;
   color: #050311;
@@ -58,7 +62,7 @@ p{
   margin-top: 2px;
   height: 33px; 
   font-size: 17px;
-  font-family: Rajdhani-Medium;
+  font-family: Rajdhani-Semi-Bold;
   color: black;
   background-color: white;
   transition: background-color 0.0s ease-out;
