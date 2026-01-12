@@ -25,3 +25,23 @@
   pointer-events: all;
 }
 
+@font-face {
+  font-family: Rajdhani-Bold;
+  src: url('/fonts/Rajdhani-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rajdhani-Semi-Bold;
+  src: url('/fonts/Rajdhani-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rajdhani-Medium;
+  src: url('/fonts/Rajdhani-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

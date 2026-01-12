@@ -8,7 +8,7 @@ export class StartPage {
         this.lastPriceField = document.getElementById("lastPrice")
         this.volumeField = document.getElementById("volume")
         this.averageVolumeField = document.getElementById("averageVolume")
-        this.floatField = document.getElementById("float")
+        this.floatField = document.getElementById("floatShare")
     }
 
     // Gets all fields off of the website and stores them within the stock data object 
@@ -18,7 +18,7 @@ export class StartPage {
     stockData.lastClose = Number(this.lastPriceField.value);
     stockData.volume = Number(this.volumeField.value.replace(/,/g, ""));
     stockData.averageVolume = Number(this.averageVolumeField.value.replace(/,/g, "")); 
-    stockData.float =  String(this.floatField.value);
+    stockData.float = Number(this.floatField.value.replace(/,/g, ""));
   }
 
   clearAllFields(){

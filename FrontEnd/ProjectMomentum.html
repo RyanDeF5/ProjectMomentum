@@ -43,9 +43,10 @@
               <input class="entryFieldNumber" id="lastPrice" placeholder="LAST CLOSING PRICE">
 
               <div class="entryLabel">SHARE COUNT/FLOAT:</div>
-              <input class="entryFieldNumber" id="float" placeholder="'No' IF NOT AVALIBLE">
+              <input class="entryFieldNumber" id="floatShare" placeholder="'No' IF NOT AVALIBLE">
               <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
               <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
+              <button id="fakeFillButton" class="themeButton typeNormal">(DEV OPTION) FILL ALL FIELDS</button>
             </div>
           </section>
           <footer>
@@ -58,10 +59,30 @@
             <p>Summary:</p>
             <div id="summaryBox">
               <div id="backgroundTicker">STCK</div>
-              <div class="summaryItem" id="percentUpBox">% Up Today Goes Here</div>
-              <div class="summaryItem" id="rvolBox">RVOL Goes Here</div>
-              <div class="summaryItem" id="priceBox">Price Goes Here</div>
-              <div class="summaryItem" id="floatBox">Float Goes Here</div>
+              
+              <div class="summaryItem" id="percentUpBox">% UP TODAY</div>
+              <div class="summaryNumber" id="percentUp">0%</div>
+              <div class="progressContainer summaryBar" id="percetProgress">
+                <div class="progressBar" id="percetProgressBar"></div>
+              </div>
+
+              <div class="summaryItem" id="rvolBox">REL VOLUME</div>
+              <div class="summaryNumber" id="rvol">0X</div>
+              <div class="progressContainer summaryBar" id="rvolProgress">
+                <div class="progressBar" id="rvolProgressBar"></div>
+              </div>
+
+              <div class="summaryItem" id="priceBox">CURRENT PRICE</div>
+              <div class="summaryNumber" id="price">$0.00</div>
+              <div class="progressContainer summaryBar" id="priceProgress">
+                <div class="progressBar" id="priceProgressBar"></div>
+              </div>
+
+              <div class="summaryItem" id="floatBox">FLOAT</div>
+              <div class="summaryNumber" id="float">0</div>
+              <div class="progressContainer summaryBar" id="floatProgress">
+                <div class="progressBar" id="floatProgressBar"></div>
+              </div>
             </div>
           </section>
           <button id="backButton" class="themeButton typeNormal">BACK</button>

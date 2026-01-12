@@ -8,6 +8,7 @@
     goToPage("summaryPage")})
   document.getElementById("backButton").addEventListener("click", () => {
     goToPage("startPage")})
+  document.getElementById("fakeFillButton").addEventListener("click", fakeFill)
 
   // Instansiate Classes:
   let start_page = new StartPage();
@@ -31,14 +32,24 @@
   }
 
   function goToPage(targetPageId) {
-    // 1. Remove 'active' from the current page
     document.querySelector('.page.active').classList.remove('active');
-    
-    // 2. Add 'active' to the new page
     document.getElementById(targetPageId).classList.add('active');
 }
   
   function activateButton(buttonID){
     document.getElementById(buttonID).classList.remove('typeDisabled');
     document.getElementById(buttonID).classList.add('typeBuy');
+  }
+
+  function fakeFill(){
+    document.getElementById("symbol").value = "TEST"
+    document.getElementById("currentPrice").value = `${getRandomInt(1, 30)}`
+    document.getElementById("lastPrice").value = `${getRandomInt(1, 30)}`
+    document.getElementById("volume").value = `${getRandomInt(5000000, 20000000)}`
+    document.getElementById("averageVolume").value = `${getRandomInt(1000000, 10000000)}`
+    document.getElementById("floatShare").value = `${getRandomInt(2000000, 20000000)}`
+  }
+
+  function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
   }
