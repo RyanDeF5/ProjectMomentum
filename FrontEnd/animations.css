@@ -1,0 +1,47 @@
+.animatedContainer {
+  display: inline-block; /* shrink to text */
+  position: relative;
+  overflow: hidden;      /* ensure box hides properly */
+  justify-self: center;
+  align-self: center;
+  margin-bottom: 20px; margin-top: 20px;
+  opacity: 1;
+  transition: width 0.5s ease-out, left 0.5s ease-out;
+}
+
+.animatedBox{
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: var(--asphalt-pink);
+  z-index: 2;
+  transition: width 0.5s ease-out;
+  opacity: 1;
+}
+.animatedInnerContainer{
+  background-color: var(--asphalt-grey);
+  z-index: 5;
+  width: 0%;
+  height: 100%;
+  transition: width 0.5s ease-out;
+}
+
+.animatedBox.is-hidden{
+  width: 0%;
+}
+
+.animatedBox.is-visible{
+  width: 100%;
+}
+
+.animatedInnerContainer.close {
+  width: 0%;
+}
+
+.animatedInnerContainer.open {
+  width: 100%;
+}
+
+
+
+

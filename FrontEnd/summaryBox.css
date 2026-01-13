@@ -1,8 +1,9 @@
 #summarySection{
-  margin-top: 300px;
+  margin-top: 100px;
   width: 1170px;
   display: grid;
   justify-self: center;
+  align-self: center;
   flex-direction: column;  
   font-family: Rajdhani-Medium;  
   color: var(--asphalt-black);   
@@ -13,6 +14,8 @@
   grid-template-columns: 375px;
   grid-template-rows: 100px 60px 60px 60px 60px 120px; 
   margin-left: 50px;
+  justify-self: center;
+  align-self: center;
   gap: 5px;
   height: 525px;
   width: 375px;
@@ -100,5 +103,10 @@
   background-color: rgb(52 236 250);
   transition: width 1s ease-out; 
 }
+
+.no-transition {
+  transition: none !important;
+}
+
 #percetProgress{grid-row: 2/3;} #rvolProgress{grid-row: 3/4;} 
 #priceProgress{grid-row: 4/5;} #floatProgress{grid-row: 5/6;}

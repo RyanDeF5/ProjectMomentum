@@ -20,7 +20,6 @@ export class SummaryPage {
     }
 
     calculateSummary(){
-    this.resetBars();
 
     this.RVOL = (stockData.volume / stockData.averageVolume).toFixed(1)
     this.percentChange = (((stockData.currentPrice - stockData.lastClose) / stockData.lastClose) * 100).toFixed(1);
@@ -37,23 +36,30 @@ export class SummaryPage {
     this.setBars(); 
   }
 
-  resetBars(){
-    this.percentBar.style.width = "0%";
-    this.rvolBar.style.width = "0%";
-    this.priceBar.style.width = "0%";
-    this.floatBar.style.width = "0%";
-  }
-
   setBars(){
-    let nomralizedPercent = Math.round((((this.percentChange - 0) / (100 - 0)) * 100), 0)
-    let nomralizedRVOL = Math.round((((this.RVOL - 0) / (8 - 0)) * 100), 0)
-    let nomralizedPrice = Math.round((((stockData.currentPrice - 0) / (30 - 0)) * 100), 0)
-    let nomralizedFloat = Math.round((((stockData.float - 0) / (20000000 - 0)) * 100), 0)
+    this.resetBars();
+    let nomralizedPercent = Math.round((((this.percentChange - 0) / (100 - 0)) * 100))
+    let nomralizedRVOL = Math.round((((this.RVOL - 0) / (8 - 0)) * 100))
+    let nomralizedPrice = Math.round((((stockData.currentPrice - 0) / (30 - 0)) * 100))
+    let nomralizedFloat = Math.round((((stockData.float - 0) / (20000000 - 0)) * 100))
     
-    this.percentBar.style.width = `${nomralizedPercent}%`;
-    this.rvolBar.style.width = `${nomralizedRVOL}%`;
-    this.priceBar.style.width = `${nomralizedPrice}%`;
-    this.floatBar.style.width = `${nomralizedFloat}%`;
+    setTimeout(() => {
+      this.percentBar.style.width = `${nomralizedPercent}%`;
+      this.rvolBar.style.width = `${nomralizedRVOL}%`;
+      this.priceBar.style.width = `${nomralizedPrice}%`;
+      this.floatBar.style.width = `${nomralizedFloat}%`;
+    }, 500)
+    
   }
 
+  resetBars(){
+    const bars = document.querySelectorAll(".progressBar");
+    Array.from(bars).forEach(bar => {
+    bar.classList.add("no-transition");
+    bar.style.width = "0%";
+    bar.offsetHeight;
+    bar.classList.remove("no-transition");
+    });
+  }
+  
 }

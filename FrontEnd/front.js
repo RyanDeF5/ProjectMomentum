@@ -1,5 +1,6 @@
   import {StartPage} from './startPage.js';
   import {SummaryPage} from './summaryPage.js';
+  import {AnimationEngine} from './animationEngine.js';
   import {stockData, updateClock} from './tempData.js';
 
   // Bind the submit button to the getAllFields method
@@ -9,14 +10,18 @@
   document.getElementById("backButton").addEventListener("click", () => {
     goToPage("startPage")})
   document.getElementById("fakeFillButton").addEventListener("click", fakeFill)
+  document.getElementById("TestAnimation1").addEventListener("click", playAnimationReval)
+  document.getElementById("TestAnimation2").addEventListener("click", playAnimationHide)
 
   // Instansiate Classes:
   let start_page = new StartPage();
   let summary_page  = new SummaryPage();
+  let animation_engine = new AnimationEngine();
 
   function submit(){
-    if (document.querySelector(".entryField").value === "")
+    if (document.querySelector(".entryField").value === ""){
       return
+    }
     summary_page.resetBars();
     start_page.getAllFields();
     start_page.clearAllFields(); 
@@ -27,7 +32,6 @@
   setInterval(update, 100);
 
   function update(){
-    // Check if the numerical fields contain value indicators e.g. M (million), K (thousand), ect.
     start_page.update(); 
     updateClock(); 
   }
@@ -53,4 +57,11 @@
 
   function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function playAnimationReval(){
+    animation_engine.boxOff();
+  }
+  function playAnimationHide(){
+    animation_engine.boxOn();
   }

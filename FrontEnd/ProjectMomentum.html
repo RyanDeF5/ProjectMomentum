@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="summaryBox.css">
       <link rel="stylesheet" href="backgroundPages.css">
       <link rel="stylesheet" href="buttons.css">
+      <link rel="stylesheet" href="animations.css">
       <script type="module" src="front.js" defer></script>
   </head>
   <body id="body">
@@ -17,7 +18,14 @@
         <section id="startPage" class="page active">
 
           <section id="topPage">
-             <p id="topMessage">Welcome to Project <span class="themeHighlight">Momentum</span</p>
+            
+            <div class="animatedContainer">
+              <div class="animatedInnerContainer close">
+                <div class="animatedBox is-hidden"></div>
+                <p id="topMessage">Welcome to Project <span class="themeHighlight">Momentum</span></p>
+              </div>
+            </div>
+            
           <p><span id="timeOfDay" class="themeHighlight"></span><span id="date"></span></p>
           <p><span id="hours" class="clock"></span><span id="minutes" class="clock"></span><span id="seconds" class="clock"></span></p>
           </section>
@@ -47,6 +55,8 @@
               <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
               <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
               <button id="fakeFillButton" class="themeButton typeNormal">(DEV OPTION) FILL ALL FIELDS</button>
+              <button id="TestAnimation1" class="themeButton typeNormal">Play Animation (Reveal)</button>
+              <button id="TestAnimation2" class="themeButton typeNormal">Play Animation (Hide)</button>
             </div>
           </section>
           <footer>
@@ -55,8 +65,8 @@
         </section>
 
         <section id="summaryPage" class="page">
+          <p style="align-self: center;">Summary:</p>
           <section id="summarySection">
-            <p>Summary:</p>
             <div id="summaryBox">
               <div id="backgroundTicker">STCK</div>
               

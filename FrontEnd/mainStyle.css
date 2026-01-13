@@ -29,11 +29,10 @@ p{
   border-width: 3px; */
 }
 
-#topMessage{
+/* #topMessage{
   font-size: 35px;
   font-family: Rajdhani-Bold;
-  padding-bottom: 60px;
-}
+} */
 
 .clock{
   font-size: 75px;
@@ -55,6 +54,18 @@ p{
   /* border-color: #1159d2;
   border-style: solid;
   border-width: 3px; */
+}
+
+#topMessage {
+  font-size: 35px;
+  font-family: Rajdhani-Bold;
+  margin: 0;
+  position: relative;
+  z-index: -1;           
+  opacity: 1;           
+  transition: opacity 0.3s ease 0.5s; 
+  width: 500px;
+  height: 50px;
 }
 
 .entryField, .entryFieldNumber{
