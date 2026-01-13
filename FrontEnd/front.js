@@ -17,6 +17,7 @@
   function submit(){
     if (document.querySelector(".entryField").value === "")
       return
+    summary_page.resetBars();
     start_page.getAllFields();
     start_page.clearAllFields(); 
     summary_page.calculateSummary();
@@ -43,8 +44,8 @@
 
   function fakeFill(){
     document.getElementById("symbol").value = "TEST"
-    document.getElementById("currentPrice").value = `${getRandomInt(1, 30)}`
-    document.getElementById("lastPrice").value = `${getRandomInt(1, 30)}`
+    document.getElementById("currentPrice").value = `${getRandomInt(30, 35)}`
+    document.getElementById("lastPrice").value = `${getRandomInt(25, 30)}`
     document.getElementById("volume").value = `${getRandomInt(5000000, 20000000)}`
     document.getElementById("averageVolume").value = `${getRandomInt(1000000, 10000000)}`
     document.getElementById("floatShare").value = `${getRandomInt(2000000, 20000000)}`

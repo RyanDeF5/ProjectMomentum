@@ -62,7 +62,6 @@
 .summaryNumber{
   position: relative;
   left: 140px;
-  top: 15px;
   font-size: 23px;
   grid-column: 1/2;
   color: white;
@@ -86,7 +85,7 @@
 
 .progressContainer{
   position: relative;
-  width: 200px;
+  width: 300px;
   height: 5px;
   overflow: hidden; /* Clips the filling to the rounded corners */
 }
