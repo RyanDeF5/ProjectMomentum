@@ -48,7 +48,7 @@
 
         animation_engine.RevealPage(targetPage);
         
-    }, 550);
+    }, 650);
   } 
   
   function activateButton(buttonID){

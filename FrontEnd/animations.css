@@ -14,7 +14,7 @@
   width: 100%;
   height: 100%;
   z-index: 10;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.15s ease-in;
   opacity: 1;
   transform: translateX(0);
 }
@@ -29,20 +29,44 @@
 
 
 .animatedBox.is-hidden{
-  transform: translateX(-101%);
+  transform: translateX(-111%);
 }
 
 .animatedBox.is-visible{
-  transform: translateX(0);
-}
-
-.animatedBox.is-visible-from-right{
-  transform: translateX(0);
+  transform: translateX(0%);
 }
 
 .animatedBox.is-hidden-to-right{
-  transform: translateX(101%);
+  transform: translateX(111%);
 }
+
+.animatedCloak {
+  clip-path: inset(0 0 0 0); 
+  transition: clip-path 0.3s ease;
+}
+
+/* clip-path: inset(top right bottom left); */
+.animatedCloak.reveal{
+  clip-path: inset(0 0 0 0);
+}
+
+.animatedCloak.hide {
+  clip-path: inset(0 0 0 100%);
+}
+
+.animatedCloak.hideRight {
+  clip-path: inset(0 100% 0 0);
+}
+
+.animatedCloak.hideTop {
+  clip-path: inset(100% 0 0 0);
+}
+
+.animatedCloak.hideBottom {
+  clip-path: inset(0 0 100% 0);
+}
+
+
 
 
 
