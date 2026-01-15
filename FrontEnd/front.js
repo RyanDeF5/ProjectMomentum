@@ -2,9 +2,11 @@
   import {SummaryPage} from './summaryPage.js';
   import {AnimationEngine} from './animationEngine.js';
   import {stockData, updateClock} from './tempData.js';
+  import {fetchStockData} from './backendComunication.js'
 
   // Bind the submit button to the getAllFields method
-  document.getElementById("submitButton").addEventListener("click", submit)
+  document.getElementById("superSubmitButton").addEventListener("click", superCalculate)
+  document.getElementById("submitButton").addEventListener("click", calculate)
   document.getElementById("SwitchPage").addEventListener("click", () => {
     goToPage("summaryPage")})
   document.getElementById("backButton").addEventListener("click", () => {
@@ -18,7 +20,9 @@
   let summary_page  = new SummaryPage();
   let animation_engine = new AnimationEngine();
 
-  function submit(){
+  fetchStockData("APPL");
+
+  function calculate(){
     if (document.querySelector(".entryField").value === ""){
       return
     }
@@ -28,6 +32,42 @@
     summary_page.calculateSummary();
     goToPage("summaryPage");
   }
+
+  async function superCalculate() {
+    let symbolEl = document.getElementById("superSymbol");
+    if (!symbolEl) {
+      alert("Symbol element not found on page!");
+      return;
+    }
+
+    let symbol = symbolEl.textContent.trim();
+    if (!symbol) {
+      alert("Stock symbol is missing. Please enter a symbol.");
+      return;
+    }
+
+    let data;
+    try {
+      data = await fetchStockData(symbol);
+    } catch (err) {
+      console.error("Failed to fetch stock data:", err);
+      alert("Failed to fetch stock data. Please try again.");
+      return;
+    }
+
+    stockData.symbol = symbol;
+    stockData.averageVolume = document.getElementById("superAveVolume").textContent.trim();
+    stockData.currentPrice = data.currentPrice;
+    stockData.lastClose = data.lastClose;
+    stockData.volume = data.currentVolume;
+    stockData.float = "0"; 
+
+    summary_page.resetBars();
+    start_page.clearAllFields(); 
+    summary_page.calculateSummary();
+    goToPage("summaryPage");
+  }
+
 
   setInterval(update, 100);
 

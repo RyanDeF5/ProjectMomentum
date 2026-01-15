@@ -45,6 +45,14 @@ p{
   color: #050311;
 }
 
+#superFieldRow{
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 60px 60px ;
+  gap: 15px;
+  justify-content: center;
+}
+
 #fieldRow{
   display: grid;
   grid-template-columns: 200px 200px 200px 200px;
@@ -68,7 +76,7 @@ p{
   height: 50px;
 }
 
-.entryField, .entryFieldNumber{
+.entryField, .entryFieldNumber, .entryFieldNumberForSuper, .entryFieldForSuper{
   margin-top: 2px;
   height: 33px; 
   font-size: 17px;

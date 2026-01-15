@@ -31,17 +31,18 @@
   color: white;
 }
 
-/* .cornerNotch{
-  position: relative; 
-  bottom: -16px;          
-  right: -109px;
-} */
 
 #submitButton, #SwitchPage{
   grid-column: 3 / 5;
   font-size: 21px;
   /* transition: background-color .3s ease-in-out, color .3s ease-in-out; */
 }
+
+#superSubmitButton{
+  grid-column: 2 / 4;
+  font-size: 21px;
+}
+
 
 #SwitchPage{  
   grid-column: 1 / 3;

@@ -48,38 +48,40 @@
           </section>
 
           <section id="stockInfoRow">
-            
-            <div class="animatedContainer">
-              <div class="animatedCloak reveal topdown">
-               <div id="fieldRow">
-                <div class="entryLabel">ENTER STOCK SYMBOL:</div>
-                <input class="entryField" id="symbol" placeholder="E.G. APPL, MSFT">
+            <div class="animatedCloak reveal topdown">
+              <div class="animatedContainer">
+                  <div id="superFieldRow">
+                    <div class="entryLabel">STOCK TICKER/SYMBOL:</div>
+                    <input class="entryFieldForSuper" id="superSymbol" placeholder="E.G. APPL, MSFT">
 
-                <div class="entryLabel">CURRENT TRADING VOLUME:</div>
-                <input class="entryFieldNumber" id="volume" placeholder="VOLUME">
-
-                <div class="entryLabel">ENTER CURRENT PRICE:</div>
-                <input class="entryFieldNumber" id="currentPrice" placeholder="CURRENT TRADING PRICE">
-
-                <div class="entryLabel">3 MONTH AVERAGE VOLUME:</div>
-                <input class="entryFieldNumber" id="averageVolume" placeholder="AVERAGE VOLUME">
-
-                <div class="entryLabel">RECENT CLOSING PRICE:</div>
-                <input class="entryFieldNumber" id="lastPrice" placeholder="LAST CLOSING PRICE">
-
-                <div class="entryLabel">SHARE COUNT/FLOAT:</div>
-                <input class="entryFieldNumber" id="floatShare" placeholder="'No' IF NOT AVALIBLE">
-                <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
-                <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
-                <button id="fakeFillButton" class="themeButton typeNormal">(DEV OPTION) FILL ALL FIELDS</button>
+                    <div class="entryLabel">STOCK AVERAGE VOLUME:</div>
+                    <input class="entryFieldNumberForSuper" id="superAveVolume" placeholder="AVERAGE VOLUME">
+                    
+                    <button id="superSubmitButton" class="themeButton typeBuy">SUBMIT</button>
+                  </div>
+                
+                <div id="fieldRow">
+                  <div class="entryLabel">ENTER STOCK SYMBOL:</div>
+                  <input class="entryField" id="symbol" placeholder="E.G. APPL, MSFT">
+                  <div class="entryLabel">CURRENT TRADING VOLUME:</div>
+                  <input class="entryFieldNumber" id="volume" placeholder="VOLUME">
+                  <div class="entryLabel">ENTER CURRENT PRICE:</div>
+                  <input class="entryFieldNumber" id="currentPrice" placeholder="CURRENT TRADING PRICE">
+                  <div class="entryLabel">3 MONTH AVERAGE VOLUME:</div>
+                  <input class="entryFieldNumber" id="averageVolume" placeholder="AVERAGE VOLUME">
+                  <div class="entryLabel">RECENT CLOSING PRICE:</div>
+                  <input class="entryFieldNumber" id="lastPrice" placeholder="LAST CLOSING PRICE">
+                  <div class="entryLabel">SHARE COUNT/FLOAT:</div>
+                  <input class="entryFieldNumber" id="floatShare" placeholder="'No' IF NOT AVAILABLE">
+                  <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
+                  <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
+                  <button id="fakeFillButton" class="themeButton typeNormal">(DEV OPTION) FILL ALL FIELDS</button>
                 </div>
               </div>
             </div>
-            <div id="testButtons">
-              <!-- <button id="TestAnimation1" class="themeButton typeNormal">Play Animation (Reveal)</button>
-              <button id="TestAnimation2" class="themeButton typeNormal">Play Animation (Hide)</button> -->
             </div>
           </section>
+
           <footer>
             <p>&copy; 2026 My Website Project</p>
           </footer>

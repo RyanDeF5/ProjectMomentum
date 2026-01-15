@@ -29,6 +29,7 @@
     "math-intrinsics": "^1.1.0",
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
+    "node-fetch": "^3.3.2",
     "proxy-from-env": "^1.1.0"
   },
   "scripts": {

@@ -1,6 +1,7 @@
 // Establish stock data package 
 export const stockData = {
-symbol: null,
+symbol: '',
+fullName: '',
 currentPrice: 0,
 lastClose: 0,
 volume: 0,

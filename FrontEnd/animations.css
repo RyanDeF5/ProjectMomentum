@@ -45,6 +45,11 @@
   transition: clip-path 0.3s ease;
 }
 
+.animatedCloak.multiItem{
+  display: flex;
+  flex-direction: column; /* stacks items vertically */
+}
+
 /* clip-path: inset(top right bottom left); */
 .animatedCloak.reveal{
   clip-path: inset(0 0 0 0);
