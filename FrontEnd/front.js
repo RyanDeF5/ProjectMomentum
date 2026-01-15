@@ -10,8 +10,8 @@
   document.getElementById("backButton").addEventListener("click", () => {
     goToPage("startPage")})
   document.getElementById("fakeFillButton").addEventListener("click", fakeFill)
-  document.getElementById("TestAnimation1").addEventListener("click", playAnimationReval)
-  document.getElementById("TestAnimation2").addEventListener("click", playAnimationHide)
+  // document.getElementById("TestAnimation1").addEventListener("click", playAnimationReval)
+  // document.getElementById("TestAnimation2").addEventListener("click", playAnimationHide)
 
   // Instansiate Classes:
   let start_page = new StartPage();
@@ -37,9 +37,19 @@
   }
 
   function goToPage(targetPageId) {
-    document.querySelector('.page.active').classList.remove('active');
-    document.getElementById(targetPageId).classList.add('active');
-}
+    const currentPage = document.querySelector('.page.active');
+    const targetPage = document.getElementById(targetPageId);
+
+    animation_engine.HidePage(currentPage);
+
+    setTimeout(() => {
+        currentPage.classList.remove('active');
+        targetPage.classList.add('active');
+
+        animation_engine.RevealPage(targetPage);
+        
+    }, 550);
+  } 
   
   function activateButton(buttonID){
     document.getElementById(buttonID).classList.remove('typeDisabled');
@@ -59,9 +69,9 @@
   return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function playAnimationReval(){
-    animation_engine.boxOff();
+  function playAnimationReval(pageID){
+    animation_engine.HidePage(pageID);
   }
-  function playAnimationHide(){
-    animation_engine.boxOn();
+  function playAnimationHide(pageID){
+    animation_engine.RevealPage(pageID);
   }

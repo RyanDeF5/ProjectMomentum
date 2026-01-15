@@ -6,41 +6,46 @@
   align-self: center;
   margin-bottom: 20px; margin-top: 20px;
   opacity: 1;
-  transition: width 0.5s ease-out, left 0.5s ease-out;
+  transition: width 0.2s ease-out;
 }
 
 .animatedBox{
   position: absolute;
-  width: 0%;
+  width: 100%;
   height: 100%;
-  background-color: var(--asphalt-pink);
-  z-index: 2;
-  transition: width 0.5s ease-out;
+  z-index: 10;
+  transition: transform 0.3s ease-in;
   opacity: 1;
-}
-.animatedInnerContainer{
-  background-color: var(--asphalt-grey);
-  z-index: 5;
-  width: 0%;
-  height: 100%;
-  transition: width 0.5s ease-out;
+  transform: translateX(0);
 }
 
+.animatedBox.text{
+  background-color: var(--asphalt-pink);
+}
+
+.animatedBox.box{
+  background-color: var(--background-color);
+}
+
+
 .animatedBox.is-hidden{
-  width: 0%;
+  transform: translateX(-101%);
 }
 
 .animatedBox.is-visible{
-  width: 100%;
+  transform: translateX(0);
 }
 
-.animatedInnerContainer.close {
-  width: 0%;
+.animatedBox.is-visible-from-right{
+  transform: translateX(0);
 }
 
-.animatedInnerContainer.open {
-  width: 100%;
+.animatedBox.is-hidden-to-right{
+  transform: translateX(101%);
 }
+
+
+
 
 
 

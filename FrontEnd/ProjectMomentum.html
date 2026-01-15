@@ -18,86 +18,111 @@
         <section id="startPage" class="page active">
 
           <section id="topPage">
-            
+
             <div class="animatedContainer">
-              <div class="animatedInnerContainer close">
-                <div class="animatedBox is-hidden"></div>
-                <p id="topMessage">Welcome to Project <span class="themeHighlight">Momentum</span></p>
-              </div>
+              <div class="animatedBox is-hidden"></div>
+
             </div>
             
-          <p><span id="timeOfDay" class="themeHighlight"></span><span id="date"></span></p>
-          <p><span id="hours" class="clock"></span><span id="minutes" class="clock"></span><span id="seconds" class="clock"></span></p>
+            <div class="animatedContainer">
+              <div class="animatedBox is-hidden text"></div>
+              <p id="topMessage">Welcome to Project <span class="themeHighlight">Momentum</span></p>
+            </div>
+            
+          <div class="animatedContainer">
+              <div class="animatedBox is-hidden-to-right text right"></div>
+              <p><span id="timeOfDay" class="themeHighlight"></span><span id="date"></span></p>
+          </div>
+          
+          <div class="animatedContainer">
+              <div class="animatedBox is-hidden text"></div>
+              <p><span id="hours" class="clock"></span><span id="minutes" class="clock"></span><span id="seconds" class="clock"></span></p>
+            </div>
           </section>
 
           <section id="stockInfoRow">
-            <div id="idRow">
+            
+            <div class="animatedContainer">
+              <div class="animatedBox is-hidden box"></div>
+               <div id="fieldRow">
+                <div class="entryLabel">ENTER STOCK SYMBOL:</div>
+                <input class="entryField" id="symbol" placeholder="E.G. APPL, MSFT">
+
+                <div class="entryLabel">CURRENT TRADING VOLUME:</div>
+                <input class="entryFieldNumber" id="volume" placeholder="VOLUME">
+
+                <div class="entryLabel">ENTER CURRENT PRICE:</div>
+                <input class="entryFieldNumber" id="currentPrice" placeholder="CURRENT TRADING PRICE">
+
+                <div class="entryLabel">3 MONTH AVERAGE VOLUME:</div>
+                <input class="entryFieldNumber" id="averageVolume" placeholder="AVERAGE VOLUME">
+
+                <div class="entryLabel">RECENT CLOSING PRICE:</div>
+                <input class="entryFieldNumber" id="lastPrice" placeholder="LAST CLOSING PRICE">
+
+                <div class="entryLabel">SHARE COUNT/FLOAT:</div>
+                <input class="entryFieldNumber" id="floatShare" placeholder="'No' IF NOT AVALIBLE">
+                <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
+                <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
+                <button id="fakeFillButton" class="themeButton typeNormal">(DEV OPTION) FILL ALL FIELDS</button>
+              </div>
             </div>
-
-            <div id="fieldRow">
-              <div class="entryLabel">ENTER STOCK SYMBOL:</div>
-              <input class="entryField" id="symbol" placeholder="E.G. APPL, MSFT">
-
-              <div class="entryLabel">CURRENT TRADING VOLUME:</div>
-              <input class="entryFieldNumber" id="volume" placeholder="VOLUME">
-
-              <div class="entryLabel">ENTER CURRENT PRICE:</div>
-              <input class="entryFieldNumber" id="currentPrice" placeholder="CURRENT TRADING PRICE">
-
-              <div class="entryLabel">3 MONTH AVERAGE VOLUME:</div>
-              <input class="entryFieldNumber" id="averageVolume" placeholder="AVERAGE VOLUME">
-
-              <div class="entryLabel">RECENT CLOSING PRICE:</div>
-              <input class="entryFieldNumber" id="lastPrice" placeholder="LAST CLOSING PRICE">
-
-              <div class="entryLabel">SHARE COUNT/FLOAT:</div>
-              <input class="entryFieldNumber" id="floatShare" placeholder="'No' IF NOT AVALIBLE">
-              <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
-              <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
-              <button id="fakeFillButton" class="themeButton typeNormal">(DEV OPTION) FILL ALL FIELDS</button>
-              <button id="TestAnimation1" class="themeButton typeNormal">Play Animation (Reveal)</button>
-              <button id="TestAnimation2" class="themeButton typeNormal">Play Animation (Hide)</button>
+            <div id="testButtons">
+              <!-- <button id="TestAnimation1" class="themeButton typeNormal">Play Animation (Reveal)</button>
+              <button id="TestAnimation2" class="themeButton typeNormal">Play Animation (Hide)</button> -->
             </div>
           </section>
           <footer>
-            <p>&copy; 2026 My Website Project</p>
+            <div class="animatedContainer">
+              <div class="animatedBox is-hidden text right"></div>
+                <p>&copy; 2026 My Website Project</p>
+            </div>
           </footer>
         </section>
 
         <section id="summaryPage" class="page">
-          <p style="align-self: center;">Summary:</p>
+          <div class="animatedContainer">
+              <div class="animatedBox is-hidden text"></div>
+                <p style="align-self: center;">Summary:</p>
+            </div>
           <section id="summarySection">
-            <div id="summaryBox">
-              <div id="backgroundTicker">STCK</div>
-              
-              <div class="summaryItem" id="percentUpBox">% UP TODAY</div>
-              <div class="summaryNumber" id="percentUp">0%</div>
-              <div class="progressContainer summaryBar" id="percetProgress">
-                <div class="progressBar" id="percetProgressBar"></div>
-              </div>
+            <div class="animatedContainer">
+              <div class="animatedBox is-hidden box"></div>
+              <div id="summaryBox">
+                <div id="backgroundTicker">STCK</div>
+                
+                <div class="summaryItem" id="percentUpBox">% UP TODAY</div>
+                <div class="summaryNumber" id="percentUp">0%</div>
+                <div class="progressContainer summaryBar" id="percetProgress">
+                  <div class="progressBar" id="percetProgressBar"></div>
+                </div>
 
-              <div class="summaryItem" id="rvolBox">REL VOLUME</div>
-              <div class="summaryNumber" id="rvol">0X</div>
-              <div class="progressContainer summaryBar" id="rvolProgress">
-                <div class="progressBar" id="rvolProgressBar"></div>
-              </div>
+                <div class="summaryItem" id="rvolBox">REL VOLUME</div>
+                <div class="summaryNumber" id="rvol">0X</div>
+                <div class="progressContainer summaryBar" id="rvolProgress">
+                  <div class="progressBar" id="rvolProgressBar"></div>
+                </div>
 
-              <div class="summaryItem" id="priceBox">CURRENT PRICE</div>
-              <div class="summaryNumber" id="price">$0.00</div>
-              <div class="progressContainer summaryBar" id="priceProgress">
-                <div class="progressBar" id="priceProgressBar"></div>
-              </div>
+                <div class="summaryItem" id="priceBox">CURRENT PRICE</div>
+                <div class="summaryNumber" id="price">$0.00</div>
+                <div class="progressContainer summaryBar" id="priceProgress">
+                  <div class="progressBar" id="priceProgressBar"></div>
+                </div>
 
-              <div class="summaryItem" id="floatBox">FLOAT</div>
-              <div class="summaryNumber" id="float">0</div>
-              <div class="progressContainer summaryBar" id="floatProgress">
+                <div class="summaryItem" id="floatBox">FLOAT</div>
+                <div class="summaryNumber" id="float">0</div>
+                <div class="progressContainer summaryBar" id="floatProgress">
                 <div class="progressBar" id="floatProgressBar"></div>
+                </div>
               </div>
             </div>
           </section>
           <button id="backButton" class="themeButton typeNormal">BACK</button>
           <footer>
-            <p>&copy; 2026 My Website Project</p>
+            <div class="animatedContainer">
+              <div class="animatedBox is-hidden text right"></div>
+                <p>&copy; 2026 My Website Project</p>
+            </div>
           </footer>
         </section>
       </main>

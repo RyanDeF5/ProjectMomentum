@@ -3,6 +3,7 @@
   --asphalt-pink: #ff0054;
   --asphalt-grey: #3f4b57;
   --asphalt-black: #182128;
+  --background-color: #ececec;
 }
 
 p{
@@ -82,4 +83,9 @@ p{
   margin-top: 10px;
   font-size: 17px;
   font-family: Rajdhani-Semi-Bold;
+}
+
+#testButtons{
+  justify-self: center;
+  align-self: center;
 }
