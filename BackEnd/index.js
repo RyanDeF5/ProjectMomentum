@@ -1,46 +1,35 @@
 require('dotenv').config();  
 const express = require("express");
 const cors = require("cors");
-const fetch = require("node-fetch");  
+
+// 1. Import the Class
+const YahooFinance = require('yahoo-finance2').default;
+// 2. Create the instance (This fixes your error!)
+const yahooFinance = new YahooFinance();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const API_KEY = process.env.API_KEY;
-if (!API_KEY) throw new Error("API_KEY not set");
-
-// POST /analyze
 app.post("/analyze", async (req, res) => {
   const { symbol } = req.body;
-
-  if (!symbol || typeof symbol !== "string") {
-    return res.status(400).json({ error: "Stock symbol is required" });
-  }
+  if (!symbol) return res.status(400).json({ error: "Symbol required" });
 
   try {
-    const quoteRes = await fetch(
-      `https://api.stockdata.org/v1/data/quote?symbols=${symbol.toUpperCase()}&api_token=${API_KEY}`
-    );
-    const json = await quoteRes.json();
-
-    if (!json.data || !json.data.length) {
-      return res.status(404).json({ error: "Symbol not found" });
-    }
-
-    const quote = json.data[0];
+    // Now this call will work because 'yahooFinance' is initialized!
+    const quote = await yahooFinance.quote(symbol.toUpperCase());
 
     res.json({
       symbol: symbol.toUpperCase(),
-      fullName: quote.name,
-      currentPrice: quote.price,
-      lastClose: quote.previous_close_price,
-      currentVolume: quote.volume
+      fullName: quote.longName || quote.shortName,
+      currentPrice: quote.regularMarketPrice,
+      lastClose: quote.regularMarketPreviousClose,
+      currentVolume: quote.regularMarketVolume,
+      averageVolume: quote.averageDailyVolume3Month
     });
-
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to fetch stock data" });
+    console.error("Yahoo Finance Error:", err);
+    res.status(500).json({ error: "Failed to fetch data" });
   }
 });
 

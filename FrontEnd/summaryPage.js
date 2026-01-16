@@ -10,13 +10,13 @@ export class SummaryPage {
         this.summaryPrice = document.getElementById("price")
         this.summaryRVOL = document.getElementById("rvol")
         this.summaryPercentUp = document.getElementById("percentUp")
-        this.summaryFloat = document.getElementById("float")
+        this.summaryCurrentVolume = document.getElementById("currentVolume")
         this.backgroundTicker = document.getElementById("backgroundTicker");
 
         this.percentBar = document.getElementById("percetProgressBar");
         this.rvolBar = document.getElementById("rvolProgressBar");
         this.priceBar = document.getElementById("priceProgressBar");
-        this.floatBar = document.getElementById("floatProgressBar");
+        this.currentVolumeBar = document.getElementById("curVolumeProgressBar");
     }
 
     calculateSummary(){
@@ -29,7 +29,7 @@ export class SummaryPage {
     this.summaryPrice.textContent = `$${stockData.currentPrice}`; 
     this.summaryRVOL.textContent = `${this.RVOL}X`; 
     this.summaryPercentUp.textContent = `${this.percentChange}%`; 
-    this.summaryFloat.textContent = `${this.formatter.format(stockData.float)}`; 
+    this.summaryCurrentVolume.textContent = `${this.formatter.format(stockData.volume)}`; 
     this.backgroundTicker.textContent = `${stockData.symbol}`;
     this.summaryPriceBox.textContent = position
 
@@ -47,7 +47,7 @@ export class SummaryPage {
       this.percentBar.style.width = `${nomralizedPercent}%`;
       this.rvolBar.style.width = `${nomralizedRVOL}%`;
       this.priceBar.style.width = `${nomralizedPrice}%`;
-      this.floatBar.style.width = `${nomralizedFloat}%`;
+      this.currentVolumeBar.style.width = `${nomralizedFloat}%`;
     }, 500)
     
   }

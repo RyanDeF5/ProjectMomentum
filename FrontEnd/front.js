@@ -34,18 +34,12 @@
   }
 
   async function superCalculate() {
-    let symbolEl = document.getElementById("superSymbol");
-    if (!symbolEl) {
-      alert("Symbol element not found on page!");
-      return;
-    }
+    
 
-    let symbol = symbolEl.textContent.trim();
-    if (!symbol) {
-      alert("Stock symbol is missing. Please enter a symbol.");
-      return;
-    }
-
+    let symbol = document.getElementById("superSymbol").value.trim();
+    let aveVol = document.getElementById("superAveVolume").value
+    aveVol = Number(aveVol.replaceAll(",", ""));
+    
     let data;
     try {
       data = await fetchStockData(symbol);
@@ -55,8 +49,11 @@
       return;
     }
 
+    // AVERAGE VOLUME IS WORKING!!!!
+
+    console.log(data); 
     stockData.symbol = symbol;
-    stockData.averageVolume = document.getElementById("superAveVolume").textContent.trim();
+    stockData.averageVolume = data.averageVolume;
     stockData.currentPrice = data.currentPrice;
     stockData.lastClose = data.lastClose;
     stockData.volume = data.currentVolume;

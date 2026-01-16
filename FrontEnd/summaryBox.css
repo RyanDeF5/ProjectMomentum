@@ -45,7 +45,7 @@
 #priceBox{
   grid-row: 4/5;
 }
-#floatBox{
+#curVolumeBox{
   grid-row: 5/6;
 }
 
@@ -80,7 +80,7 @@
 #price{
   grid-row: 4/5;
 }
-#float{
+#currentVolume{
   grid-row: 5/6;
 }
 
@@ -109,4 +109,4 @@
 }
 
 #percetProgress{grid-row: 2/3;} #rvolProgress{grid-row: 3/4;} 
-#priceProgress{grid-row: 4/5;} #floatProgress{grid-row: 5/6;}
+#priceProgress{grid-row: 4/5;} #curVolumeProgress{grid-row: 5/6;}

@@ -32,8 +32,11 @@ export class StartPage {
 
   update(){
     // Check if the numerical fields contain value indicators e.g. M (million), K (thousand), ect.
-    const fields = document.querySelectorAll('.entryFieldNumber');
-    fields.forEach((field, index) => {
+    let superFields = document.querySelectorAll('.entryFieldNumberForSuper');
+    let fields = document.querySelectorAll('.entryFieldNumber');
+    let allFields = [...fields, ...superFields];
+
+    allFields.forEach((field) => {
       if (field.value.toLowerCase().includes("k")){
         field.value = field.value.replaceAll("k", ""); 
         this.autoAdjust(field, 1000);
