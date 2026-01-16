@@ -2,25 +2,63 @@
   margin-top: 100px;
   width: 1170px;
   display: grid;
+  grid-template-columns: 400px 400px 375px;
+  grid-template-rows: 50px 600px;
+  gap: 15px;
   justify-self: center;
   align-self: center;
-  flex-direction: column;  
   font-family: Rajdhani-Medium;  
   color: var(--asphalt-black);   
+}
+
+.summaryPageTitle{
+  grid-row: 1/2;
+  grid-column: 1/4;
+}
+
+.animatedContainer.stockNameContainer{
+  align-self: start;
+  justify-self: start;
+  grid-row: 2/3;
+  grid-column: 1/2;
+  width: 400px;
+  height: 135px;
+  z-index: 5;
+}
+
+#tickerContainer, #longNameContainer{
+  position: relative;
+  background-color: white;
+  width: 150px;
+  height: 70px;
+  text-align: center;
+  font-size: 60px;
+  font-family: Rajdhani-Bold;
+  z-index: 1;
+  top: 15px;
+  left: 25px;
+}
+
+#longNameContainer{
+  top: 22px;
+  font-size: 25px;
+  padding-left: 5px; padding-right: 5px;
+  width: fit-content;
+  height: fit-content;
 }
 
 #summaryBox{
   display: grid;
   grid-template-columns: 375px;
-  grid-template-rows: 100px 60px 60px 60px 60px 120px; 
-  margin-left: 50px;
-  justify-self: center;
-  align-self: center;
+  grid-template-rows: 100px 60px 60px 60px 60px 60px 60px; 
   gap: 5px;
-  height: 525px;
-  width: 375px;
   text-align: left;
   background-color: #272d33cc;
+}
+
+.summaryBoxContainer{
+  grid-row: 2/3;
+  grid-column: 1/2;
 }
 
 .summaryItem{
@@ -48,18 +86,8 @@
 #curVolumeBox{
   grid-row: 5/6;
 }
-
-#backgroundTicker{
-  position: relative;
-  left: 20px;
-  top: 10px;
-  height: 55px;
-  width: 340px;
-  font-size: 60px;
-  font-family: Rajdhani-Semi-Bold;
-  color: var(--asphalt-pink);
-  z-index: 1;
-  /* clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%); */
+#floatBox{
+  grid-row: 6/7;
 }
 
 .summaryNumber{
@@ -82,6 +110,9 @@
 }
 #currentVolume{
   grid-row: 5/6;
+}
+#currentFloat{
+  grid-row: 6/7;
 }
 
 /* Loading Bar Code */
@@ -109,4 +140,4 @@
 }
 
 #percetProgress{grid-row: 2/3;} #rvolProgress{grid-row: 3/4;} 
-#priceProgress{grid-row: 4/5;} #curVolumeProgress{grid-row: 5/6;}
+#priceProgress{grid-row: 4/5;} #curVolumeProgress{grid-row: 5/6;} #curFloatProgress{grid-row: 6/7;}

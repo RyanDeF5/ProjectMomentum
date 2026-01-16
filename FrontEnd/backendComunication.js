@@ -1,10 +1,15 @@
 // backendCommunication.js
 
+ import {marketData} from './tempData.js';
+
 export async function fetchStockData(symbol) {
   const res = await fetch("http://localhost:3000/analyze", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ symbol })
+    body: JSON.stringify({ 
+      symbol: symbol,
+      state: marketData.marketState
+    })
   });
 
   if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`);

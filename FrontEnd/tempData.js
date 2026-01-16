@@ -9,6 +9,10 @@ averageVolume: 0,
 float: 0
 }
 
+export const marketData = {
+  marketState: ''
+}
+
 
 export function updateClock() {
     const now = new Date();
@@ -28,6 +32,15 @@ export function updateClock() {
 
     // Convert Hours
     hours = (hours > 12) ? Math.abs(hours - 12) : hours;
+
+    // Determine Market State
+    const totalMinutes = (hours * 60) + minutes;
+
+    marketData.marketState = (totalMinutes >= 240 && totalMinutes < 570) 
+        ? "Pre-Market" 
+        : (totalMinutes >= 570 && totalMinutes < 960) 
+            ? "Market Open" 
+            : "Market Closed";
 
     let timeHours = `${hours}:`;
     let timeMinutes = `${minutes}:`

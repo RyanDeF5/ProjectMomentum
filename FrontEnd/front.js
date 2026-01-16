@@ -20,12 +20,13 @@
   let summary_page  = new SummaryPage();
   let animation_engine = new AnimationEngine();
 
-  fetchStockData("APPL");
+  // goToPage("summaryPage");
 
   function calculate(){
     if (document.querySelector(".entryField").value === ""){
       return
     }
+    stockData.fullName = "Not Identified";
     summary_page.resetBars();
     start_page.getAllFields();
     start_page.clearAllFields(); 
@@ -34,12 +35,13 @@
   }
 
   async function superCalculate() {
-    
 
     let symbol = document.getElementById("superSymbol").value.trim();
-    let aveVol = document.getElementById("superAveVolume").value
-    aveVol = Number(aveVol.replaceAll(",", ""));
-    
+    if (symbol === "") {
+      alert("Please enter a Stock Ticker/Symbol");
+      return;
+    } 
+
     let data;
     try {
       data = await fetchStockData(symbol);
@@ -49,15 +51,14 @@
       return;
     }
 
-    // AVERAGE VOLUME IS WORKING!!!!
-
     console.log(data); 
     stockData.symbol = symbol;
     stockData.averageVolume = data.averageVolume;
     stockData.currentPrice = data.currentPrice;
     stockData.lastClose = data.lastClose;
     stockData.volume = data.currentVolume;
-    stockData.float = "0"; 
+    stockData.float = data.float; 
+    stockData.fullName = data.fullName;
 
     summary_page.resetBars();
     start_page.clearAllFields(); 

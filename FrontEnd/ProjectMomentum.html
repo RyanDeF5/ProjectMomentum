@@ -51,18 +51,15 @@
             <div class="animatedCloak reveal topdown">
               <div class="animatedContainer">
                   <div id="superFieldRow">
-                    <div class="entryLabel">STOCK TICKER/SYMBOL:</div>
-                    <input class="entryFieldForSuper" id="superSymbol" placeholder="E.G. APPL, MSFT">
-
-                    <div class="entryLabel">STOCK AVERAGE VOLUME:</div>
-                    <input class="entryFieldNumberForSuper" id="superAveVolume" placeholder="AVERAGE VOLUME">
+                    <div class="entryLabel" id="superTicker">STOCK TICKER/SYMBOL:</div>
+                    <input class="entryFieldForSuper" id="superSymbol" placeholder="E.G. AAPL, MSFT">
                     
                     <button id="superSubmitButton" class="themeButton typeBuy">SUBMIT</button>
                   </div>
                 
                 <div id="fieldRow">
                   <div class="entryLabel">ENTER STOCK SYMBOL:</div>
-                  <input class="entryField" id="symbol" placeholder="E.G. APPL, MSFT">
+                  <input class="entryField" id="symbol" placeholder="E.G. AAPL, MSFT">
                   <div class="entryLabel">CURRENT TRADING VOLUME:</div>
                   <input class="entryFieldNumber" id="volume" placeholder="VOLUME">
                   <div class="entryLabel">ENTER CURRENT PRICE:</div>
@@ -87,17 +84,30 @@
           </footer>
         </section>
         <section id="summaryPage" class="page">
-          <div class="animatedContainer">
+          <section id="summarySection">
+            <div class="animatedContainer summaryPageTitle">
             <div class="animatedCloak reveal">
               <div class="animatedBox is-hidden text"></div>
-                <p style="align-self: center;">Summary:</p>
+                <p>Stock Summary:</p>
               </div>
             </div>
-          <section id="summarySection">
-            <div class="animatedContainer">
+            
+            <div class="animatedContainer stockNameContainer">
+              <div class="animatedCloak reveal">
+                <div>
+                  <div id="tickerContainer">
+                    <div id="backgroundTicker">STCK</div>
+                  </div>
+                  <div id="longNameContainer">
+                    <div id="longName"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="animatedContainer summaryBoxContainer">
               <div class="animatedCloak reveal topdown">
                 <div id="summaryBox">
-                  <div id="backgroundTicker">STCK</div>
                   
                   <div class="summaryItem" id="percentUpBox">% UP TODAY</div>
                   <div class="summaryNumber" id="percentUp">0%</div>
@@ -120,7 +130,13 @@
                   <div class="summaryItem" id="curVolumeBox">CURRENT VOLUME</div>
                   <div class="summaryNumber" id="currentVolume">0</div>
                   <div class="progressContainer summaryBar" id="curVolumeProgress">
-                  <div class="progressBar" id="curVolumeProgressBar"></div>
+                    <div class="progressBar" id="curVolumeProgressBar"></div>
+                  </div>
+
+                  <div class="summaryItem" id="floatBox">FLOAT/SHARES</div>
+                  <div class="summaryNumber" id="currentFloat">0</div>
+                  <div class="progressContainer summaryBar" id="curFloatProgress">
+                    <div class="progressBar" id="curFloatBar"></div>
                   </div>
                 </div>
               </div>

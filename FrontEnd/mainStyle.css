@@ -51,6 +51,7 @@ p{
   grid-template-rows: 60px 60px ;
   gap: 15px;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 #fieldRow{
@@ -92,7 +93,10 @@ p{
   font-family: Rajdhani-Semi-Bold;
 }
 
-#testButtons{
-  justify-self: center;
-  align-self: center;
+#superSymbol{
+  grid-column: 3/4;
+}
+
+#superTicker{
+  grid-column: 2/3;
 }
