@@ -13,6 +13,15 @@ export const marketData = {
   marketState: ''
 }
 
+export const clockData = {
+  hours: '',
+  minutes: '', 
+  seconds: '',
+  militaryTime: '',
+  anteMeridiem: ''
+}
+
+let dayOfWeek;
 
 export function updateClock() {
     const now = new Date();
@@ -22,9 +31,29 @@ export function updateClock() {
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
 
+    // Convert to military time 
+    clockData.militaryTime = (now.getHours() * 100) + now.getMinutes();
+
+    // Determine Market State
+    if (dayOfWeek !== "Saturday" || dayOfWeek !== "Sunday") {
+      if (clockData.militaryTime >= 400 && clockData.militaryTime < 930) 
+        marketData.marketState = "PRE-MARKET";
+      else if (clockData.militaryTime >= 930 && clockData.militaryTime <= 1600)
+        marketData.marketState = "MARKET OPEN"
+      else if (clockData.militaryTime > 1600 && clockData.militaryTime <= 2000)
+        marketData.marketState = "AFTER HOURS"
+      else
+        marketData.marketState = "MARKET CLOSED"
+    } 
+    else {
+      marketData.marketState = "MARKET CLOSED"
+    }
+
     let date = getDate(now); 
 
     let timeOfDay = (hours >= 12) ? " Good Evening " : " Good Morning "
+
+    clockData.anteMeridiem = (hours >= 12) ? "PM" : " AM"
 
     // Add a leading zero to numbers less than 10 (e.g., "05" instead of "5")
     minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -33,23 +62,14 @@ export function updateClock() {
     // Convert Hours
     hours = (hours > 12) ? Math.abs(hours - 12) : hours;
 
-    // Determine Market State
-    const totalMinutes = (hours * 60) + minutes;
-
-    marketData.marketState = (totalMinutes >= 240 && totalMinutes < 570) 
-        ? "Pre-Market" 
-        : (totalMinutes >= 570 && totalMinutes < 960) 
-            ? "Market Open" 
-            : "Market Closed";
-
-    let timeHours = `${hours}:`;
-    let timeMinutes = `${minutes}:`
-    let timeSeconds = `${seconds}`;
+    clockData.hours = `${hours}`;
+    clockData.minutes = `${minutes}`
+    clockData.seconds = `${seconds}`;
     
     // Push the time to your HTML element
-    document.getElementById("hours").textContent = timeHours;
-    document.getElementById("minutes").textContent = timeMinutes;
-    document.getElementById("seconds").textContent = timeSeconds;
+    document.getElementById("hours").textContent = `${clockData.hours}:`;
+    document.getElementById("minutes").textContent = `${clockData.minutes}:`;
+    document.getElementById("seconds").textContent = clockData.seconds;
     document.getElementById("date").textContent = date;
     document.getElementById("timeOfDay").textContent = timeOfDay;
 }
@@ -71,10 +91,10 @@ function getDate(now){
   else if (dateNum === 2 || dateNum === 22) suffix = "nd";
   else if (dateNum === 3 || dateNum === 23) suffix = "rd";
 
-  const weekday = now.toLocaleString('default', { weekday: 'long' });
+  dayOfWeek = now.toLocaleString('default', { weekday: 'long' });
 
   // 4. Combine them into your string
-  let day = `It is ${weekday}, ${month} ${dateNum}${suffix}, ${year}`;
+  let day = `It is ${dayOfWeek}, ${month} ${dateNum}${suffix}, ${year}`;
 
   return day; 
 }

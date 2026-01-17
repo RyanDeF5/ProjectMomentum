@@ -15,15 +15,24 @@
 
     <div id="appContainer">
       <main>
+        <div class="topBarContainer" id="topBarCover">
+              <!-- <div class="animatedCloak reveal"> -->
+                <!-- <div class="animatedBox is-hidden text"></div> -->
+                <div id="topBar">
+                  <div class="barItem" id="marketStatus"></div>
+                  <div class="barItem" id="topClock"></div>
+                </div>
+              <!-- </div> -->
+            </div>
+          <!-- <div class="flashBox"></div> -->
         <section id="startPage" class="page active">
-
           <section id="topPage">
 
-            <div class="animatedContainer">
+            <!-- <div class="animatedContainer">
               <div class="animatedCloak reveal">
                 <div class="animatedBox is-hidden"></div>
               </div>
-            </div>
+            </div> -->
             
             <div class="animatedContainer">
               <!-- <div class="animatedCloak reveal">
@@ -51,9 +60,13 @@
             <div class="animatedCloak reveal topdown">
               <div class="animatedContainer">
                   <div id="superFieldRow">
+
+                    <div class="entryLabel" id="superAverageVolumeText">AVERAGE VOLUME:</div>
+                    <input class="entryFieldNumberForSuper" id="superAverageVolume" placeholder="ENTER AVERAGE VOLUME">
+
                     <div class="entryLabel" id="superTicker">STOCK TICKER/SYMBOL:</div>
                     <input class="entryFieldForSuper" id="superSymbol" placeholder="E.G. AAPL, MSFT">
-                    
+
                     <button id="superSubmitButton" class="themeButton typeBuy">SUBMIT</button>
                   </div>
                 

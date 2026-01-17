@@ -4,6 +4,7 @@ export class AnimationEngine {
     this.animatedBoxes = document.querySelectorAll(".animatedBox");
     this.animatedCloaks = document.querySelectorAll(".animatedCloak");
     this.animatedTopContainers = document.querySelectorAll(".animatedContainer");
+    this.topBar = document.getElementById("topBarCover");
     
   }
 
@@ -52,6 +53,12 @@ export class AnimationEngine {
       }
     });
 
+    this.topBar.classList.remove('curtainClose')
+    // this.topBar.style.opacity = 0;
+    // setTimeout(() => {
+    //   this.topBar.style.opacity = 1;
+    // }, 700)
+
   }
 
   HidePage(pageElement) {
@@ -85,14 +92,12 @@ export class AnimationEngine {
      });
     }, 200)
 
-        // 2. Fade out the whole container after the boxes cover the text
+    this.topBar.classList.add('curtainClose')
+    // this.topBar.style.opacity = 0;
     // setTimeout(() => {
-    //   this.animatedTopContainers.forEach((topContainer) => {
-    //     if (this.isParentOf(pageElement, topContainer)) {
-    //       topContainer.style.opacity = 1;
-    //     }
-    //   });
-    // }, 350);
+    //   this.topBar.style.opacity = 1;
+    // }, 700)
+
   }
 
   isParentOf(pageElement, child) {

@@ -1,7 +1,7 @@
   import {StartPage} from './startPage.js';
   import {SummaryPage} from './summaryPage.js';
   import {AnimationEngine} from './animationEngine.js';
-  import {stockData, updateClock} from './tempData.js';
+  import {marketData, stockData, updateClock} from './tempData.js';
   import {fetchStockData} from './backendComunication.js'
 
   // Bind the submit button to the getAllFields method
@@ -12,8 +12,6 @@
   document.getElementById("backButton").addEventListener("click", () => {
     goToPage("startPage")})
   document.getElementById("fakeFillButton").addEventListener("click", fakeFill)
-  // document.getElementById("TestAnimation1").addEventListener("click", playAnimationReval)
-  // document.getElementById("TestAnimation2").addEventListener("click", playAnimationHide)
 
   // Instansiate Classes:
   let start_page = new StartPage();
@@ -85,8 +83,7 @@
         targetPage.classList.add('active');
 
         animation_engine.RevealPage(targetPage);
-        
-    }, 650);
+    }, 575);
   } 
   
   function activateButton(buttonID){

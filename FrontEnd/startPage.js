@@ -1,4 +1,4 @@
-import {stockData} from './tempData.js';
+import {clockData, marketData, stockData} from './tempData.js';
 
 export class StartPage {
     constructor() {
@@ -31,6 +31,13 @@ export class StartPage {
   }
 
   update(){
+
+    // check for market state 
+    this.premarketAverageVolumeCheck();
+
+    // update top bar
+    this.updateTopBar();
+
     // Check if the numerical fields contain value indicators e.g. M (million), K (thousand), ect.
     let superFields = document.querySelectorAll('.entryFieldNumberForSuper');
     let fields = document.querySelectorAll('.entryFieldNumber');
@@ -99,4 +106,20 @@ export class StartPage {
       }, 750)
     }
 
+    // Checks weather the average volume field needs to be enabled 
+    premarketAverageVolumeCheck(){
+      if (marketData.marketState === "PRE-MARKET")
+        document.getElementById("superAverageVolume").disabled = false;
+      else
+        document.getElementById("superAverageVolume").disabled = true;
+    }
+
+    // Top Bar Code 
+
+    updateTopBar(){
+      document.getElementById("marketStatus").textContent = marketData.marketState;
+      document.getElementById("topClock").textContent = `${clockData.hours}:${clockData.minutes} 
+      ${clockData.anteMeridiem}`;
+
+    }
 }
