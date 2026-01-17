@@ -9,22 +9,19 @@
       <link rel="stylesheet" href="backgroundPages.css">
       <link rel="stylesheet" href="buttons.css">
       <link rel="stylesheet" href="animations.css">
+      <link rel="stylesheet" href="images.css">
       <script type="module" src="front.js" defer></script>
   </head>
   <body id="body">
-
     <div id="appContainer">
       <main>
         <div class="topBarContainer" id="topBarCover">
-              <!-- <div class="animatedCloak reveal"> -->
-                <!-- <div class="animatedBox is-hidden text"></div> -->
+                <div class="flashBox" id="topBarFlashBox"></div>
                 <div id="topBar">
                   <div class="barItem" id="marketStatus"></div>
                   <div class="barItem" id="topClock"></div>
                 </div>
-              <!-- </div> -->
             </div>
-          <!-- <div class="flashBox"></div> -->
         <section id="startPage" class="page active">
           <section id="topPage">
 
@@ -101,7 +98,18 @@
             <div class="animatedContainer summaryPageTitle">
             <div class="animatedCloak reveal">
               <div class="animatedBox is-hidden text"></div>
-                <p>Stock Summary:</p>
+                <p style="font-size: 35px;">Stock Summary:</p>
+              </div>
+            </div>
+
+            <div class="animatedContainer rankBoxContainer">
+              <div class="animatedCloak reveal">
+                <div class="animatedBox is-hidden"></div>
+                <div id="rankBox">
+                  <div class="rankBoxItem" id="rankText">RANK</div>
+                  <div class="rankBoxItem" id="scoreBox">1200/1200</div>
+                  <div class="rankBoxItem" id="classBox">S</div>
+                </div>
               </div>
             </div>
             
@@ -121,14 +129,20 @@
             <div class="animatedContainer summaryBoxContainer">
               <div class="animatedCloak reveal topdown">
                 <div id="summaryBox">
-                  
+                  <img class="summaryIcon" id="percentUpIcon" src="/images/PercentUpIcon2.png">
+                  <img class="summaryIcon" id="relVolumeIcon" src="/images/RelVolumeIcon.png">
+                  <img class="summaryIcon" id="curPriceIcon" src="/images/CurrentPriceIcon.png">
+                  <img class="summaryIcon" id="curVolumeIcon" src="/images/CurrentVolumeIcon.png">
+                  <img class="summaryIcon" id="floatIcon" src="/images/FloatIcon.png">
+
+
                   <div class="summaryItem" id="percentUpBox">% UP TODAY</div>
                   <div class="summaryNumber" id="percentUp">0%</div>
                   <div class="progressContainer summaryBar" id="percetProgress">
                     <div class="progressBar" id="percetProgressBar"></div>
                   </div>
 
-                  <div class="summaryItem" id="rvolBox">REL VOLUME</div>
+                  <div class="summaryItem" id="rvolBox">RELATIVE VOLUME</div>
                   <div class="summaryNumber" id="rvol">0X</div>
                   <div class="progressContainer summaryBar" id="rvolProgress">
                     <div class="progressBar" id="rvolProgressBar"></div>

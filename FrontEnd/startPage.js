@@ -117,9 +117,18 @@ export class StartPage {
     // Top Bar Code 
 
     updateTopBar(){
-      document.getElementById("marketStatus").textContent = marketData.marketState;
-      document.getElementById("topClock").textContent = `${clockData.hours}:${clockData.minutes} 
+      const marketStatus = document.getElementById("marketStatus")
+      const topClock = document.getElementById("topClock")
+
+      marketStatus.textContent = marketData.marketState;
+      topClock.textContent = `${clockData.hours}:${clockData.minutes} 
       ${clockData.anteMeridiem}`;
 
+      marketStatus.classList.remove('backgroundGreen');
+      if (marketData.marketState === "MARKET CLOSED"){
+        return
+      } else {
+        marketStatus.classList.add('backgroundGreen');
+      }
     }
 }

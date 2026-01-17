@@ -35,7 +35,8 @@ export function updateClock() {
     clockData.militaryTime = (now.getHours() * 100) + now.getMinutes();
 
     // Determine Market State
-    if (dayOfWeek !== "Saturday" || dayOfWeek !== "Sunday") {
+    // marketData.marketState = "PRE-MARKET"
+    if (dayOfWeek !== "Saturday" && dayOfWeek !== "Sunday") {
       if (clockData.militaryTime >= 400 && clockData.militaryTime < 930) 
         marketData.marketState = "PRE-MARKET";
       else if (clockData.militaryTime >= 930 && clockData.militaryTime <= 1600)
@@ -48,6 +49,7 @@ export function updateClock() {
     else {
       marketData.marketState = "MARKET CLOSED"
     }
+
 
     let date = getDate(now); 
 

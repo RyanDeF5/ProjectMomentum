@@ -18,7 +18,7 @@
   let summary_page  = new SummaryPage();
   let animation_engine = new AnimationEngine();
 
-  // goToPage("summaryPage");
+  goToPageNoAnimation("summaryPage");
 
   function calculate(){
     if (document.querySelector(".entryField").value === ""){
@@ -35,6 +35,9 @@
   async function superCalculate() {
 
     let symbol = document.getElementById("superSymbol").value.trim();
+    let volumeFromField = document.getElementById("superAverageVolume");
+    volumeFromField = Number(volumeFromField.value.replaceAll(",", "")); 
+
     if (symbol === "") {
       alert("Please enter a Stock Ticker/Symbol");
       return;
@@ -54,7 +57,7 @@
     stockData.averageVolume = data.averageVolume;
     stockData.currentPrice = data.currentPrice;
     stockData.lastClose = data.lastClose;
-    stockData.volume = data.currentVolume;
+    stockData.volume = (marketData.marketState === "PRE-MARKET") ? volumeFromField : data.currentVolume;
     stockData.float = data.float; 
     stockData.fullName = data.fullName;
 
@@ -84,6 +87,16 @@
 
         animation_engine.RevealPage(targetPage);
     }, 575);
+  } 
+
+  function goToPageNoAnimation(targetPageId) {
+    const currentPage = document.querySelector('.page.active');
+    const targetPage = document.getElementById(targetPageId);
+
+    setTimeout(() => {
+        currentPage.classList.remove('active');
+        targetPage.classList.add('active');
+    }, 0);
   } 
   
   function activateButton(buttonID){

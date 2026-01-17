@@ -69,5 +69,11 @@ export class SummaryPage {
     bar.classList.remove("no-transition");
     });
   }
+
+  // Rank Box Code 
+  calculateScore(){
+    const scoreBox = document.getElementById("scoreBox");
+
+  }
   
 }

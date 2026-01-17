@@ -5,6 +5,7 @@ export class AnimationEngine {
     this.animatedCloaks = document.querySelectorAll(".animatedCloak");
     this.animatedTopContainers = document.querySelectorAll(".animatedContainer");
     this.topBar = document.getElementById("topBarCover");
+    this.topBarFlashBox = document.getElementById("topBarFlashBox");
     
   }
 
@@ -54,10 +55,9 @@ export class AnimationEngine {
     });
 
     this.topBar.classList.remove('curtainClose')
-    // this.topBar.style.opacity = 0;
-    // setTimeout(() => {
-    //   this.topBar.style.opacity = 1;
-    // }, 700)
+    setTimeout(() => {
+      this.topBarFlashBox.style.opacity = 0;
+    }, 200)
 
   }
 
@@ -93,10 +93,10 @@ export class AnimationEngine {
     }, 200)
 
     this.topBar.classList.add('curtainClose')
-    // this.topBar.style.opacity = 0;
-    // setTimeout(() => {
-    //   this.topBar.style.opacity = 1;
-    // }, 700)
+    this.topBarFlashBox.style.opacity = 1;
+    setTimeout(() => {
+      this.topBarFlashBox.style.opacity = 0;
+    }, 200)
 
   }
 
