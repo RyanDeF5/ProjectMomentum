@@ -106,6 +106,26 @@ export class StartPage {
       }, 750)
     }
 
+    // Disable all buy buttons
+    disableBuyTypeButtons(){
+      const buttons = document.querySelectorAll(".typeBuy");
+      buttons.forEach(button => {
+        button.classList.remove('typeBuy');
+        button.classList.add('typeDisabled');
+      });
+    }
+
+    // Enable all buy buttons
+    enableBuyTypeButtons(){
+      const buttons = document.querySelectorAll(".typeDisabled");
+      buttons.forEach(button => {
+        if (button.id === "submitButton" || button.id === "superSubmitButton"){
+          button.classList.remove('typeDisabled');
+          button.classList.add('typeBuy');
+        }
+      });
+    }
+
     // Checks weather the average volume field needs to be enabled 
     premarketAverageVolumeCheck(){
       if (marketData.marketState === "PRE-MARKET")

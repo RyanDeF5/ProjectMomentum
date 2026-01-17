@@ -10,7 +10,9 @@
   document.getElementById("SwitchPage").addEventListener("click", () => {
     goToPage("summaryPage")})
   document.getElementById("backButton").addEventListener("click", () => {
-    goToPage("startPage")})
+    goToPage("startPage")
+  setTimeout (() => {start_page.enableBuyTypeButtons();}, 1000)
+})
   document.getElementById("fakeFillButton").addEventListener("click", fakeFill)
 
   // Instansiate Classes:
@@ -18,7 +20,7 @@
   let summary_page  = new SummaryPage();
   let animation_engine = new AnimationEngine();
 
-  goToPageNoAnimation("summaryPage");
+  // goToPageNoAnimation("summaryPage");
 
   function calculate(){
     if (document.querySelector(".entryField").value === ""){
@@ -43,6 +45,7 @@
       return;
     } 
 
+    start_page.disableBuyTypeButtons();
     let data;
     try {
       data = await fetchStockData(symbol);
