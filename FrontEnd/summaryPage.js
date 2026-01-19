@@ -1,4 +1,5 @@
 import {stockData} from './tempData.js';
+import {geminiAI} from './integratedAI.js';
 
 export class SummaryPage {
     constructor() {
@@ -20,6 +21,9 @@ export class SummaryPage {
         this.priceBar = document.getElementById("priceProgressBar");
         this.currentVolumeBar = document.getElementById("curVolumeProgressBar");
         this.floatBar = document.getElementById("curFloatBar");
+
+        // Init AI 
+        this.gemini = new geminiAI(); 
     }
 
     calculateSummary(){
@@ -38,8 +42,9 @@ export class SummaryPage {
     this.summaryPriceBox.textContent = position;
     this.longName.textContent = stockData.fullName;
     
-
-    this.setBars(); 
+    this.setBars();
+    
+    this.gemini.start(); 
   }
 
   setBars(){
@@ -68,12 +73,6 @@ export class SummaryPage {
     bar.offsetHeight;
     bar.classList.remove("no-transition");
     });
-  }
-
-  // Rank Box Code 
-  calculateScore(){
-    const scoreBox = document.getElementById("scoreBox");
-
   }
   
 }

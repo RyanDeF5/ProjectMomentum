@@ -45,3 +45,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: Google-Regular;
+  src: url('/fonts/GoogleSansFlex_24pt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Google-Bold;
+  src: url('/fonts/GoogleSansFlex_24pt-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

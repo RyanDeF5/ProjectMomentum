@@ -1,0 +1,55 @@
+.animatedCloak.aiResBox{
+  position: relative;
+  grid-column: 2/4;
+  grid-row: 2/3;
+  width: 500px;
+  height: fit-content;
+  left: 86px;
+  top: 120px;
+  padding: 16px;
+  text-align: left;
+
+  display: grid;
+  grid-template-rows: 25px auto;
+  grid-template-columns: 25px auto;
+  gap: 10px;
+
+  background-color: #f0f4f9;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+}
+
+#geminiStar{
+  position: relative;
+  width: 25px; height: 25px;
+}
+
+#titleBoxAI{
+  font-family: Google-Bold;
+  font-size: 18px;
+}
+
+#textBoxAI{
+  grid-row: 2/3;
+  grid-column: 2/3;
+  font-family: Google-Regular;
+  font-size: 18px;
+}
+
+.spinning {
+  animation: spin-with-pause 2.5s ease infinite; 
+}
+
+@keyframes spin-with-pause {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

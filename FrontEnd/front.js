@@ -20,7 +20,7 @@
   let summary_page  = new SummaryPage();
   let animation_engine = new AnimationEngine();
 
-  // goToPageNoAnimation("summaryPage");
+  goToPageNoAnimation("summaryPage");
 
   function calculate(){
     if (document.querySelector(".entryField").value === ""){
