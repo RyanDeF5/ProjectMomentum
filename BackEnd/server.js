@@ -16,17 +16,17 @@ app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({ 
-  model: "gemini-2.5-flash", // Reverting to the "Long-Term Support" version
+  model: "gemini-3-flash-preview", // gemini-3-flash-preview, gemini-2.5-flash, gemini-2.5-flash-lite
   generationConfig: { responseMimeType: "application/json" }
 });
 
 // Is AI online? TEST 
-(async () => {
-    try {
-        const result = await model.generateContent("Say 'System Online'");
-        console.log("AI Check:", result.response.text());
-    } catch (e) { console.error("AI Init Failed:", e.message); }
-})();
+// (async () => {
+//     try {
+//         const result = await model.generateContent("Say 'System Online'");
+//         console.log("AI Check:", result.response.text());
+//     } catch (e) { console.error("AI Init Failed:", e.message); }
+// })();
 
 // Init some variables 
 let livePrice;
@@ -83,20 +83,18 @@ app.post("/generate", async (req, res) => {
       Act as an expert Day Trading Quantitative Analyst. 
       Analyze the following stock data: ${JSON.stringify(stockData)}.
       
-      Assign a 'Breakout Score' from 0 to 1200.
-      - 1200: Perfect setup (Low float, high relative volume, significant price gap).
+      Assign a 'Breakout Score' from 0 to 2000.
+      - 2000: Perfect setup (Low float, high relative volume, significant price gap).
       - 0: High risk, no volume, or "bag holder" setup.
 
-      NOTE: If the stock symbol is STCK that means it is a test stock, this means you should treat it like a 
-      test stock. Use phrases like "This would be a high moving stock" when refering to a test stock in the insight 
-      section 
+      if stock ticker is STCK treat it like a test stock
       
       Return ONLY a JSON object with these keys:
       {
         "score": number,
         "rating": "Strong Buy" | "Watch" | "Avoid",
-        "insight": "In a few sentences explain why the stock is moving or not moving, highlight any recent news 
-        that could be affecting the stocks current state"
+        "insight": If there is any recent news that could be driving the stock higher please list them otherwise list a few 
+        sentences explaining why (add in-text newlines when appropriate)"
       }
     `;
 

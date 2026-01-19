@@ -8,9 +8,10 @@
   top: 120px;
   padding: 16px;
   text-align: left;
+  transition: height 0.8s ease-out;
 
   display: grid;
-  grid-template-rows: 25px auto;
+  grid-template-rows: auto auto;
   grid-template-columns: 25px auto;
   gap: 10px;
 
@@ -19,6 +20,8 @@
   border-style: solid;
   border-width: 2px;
   border-radius: 20px;
+  font-family: Google-Regular;
+  font-size: 18px;
 }
 
 #geminiStar{
@@ -26,28 +29,29 @@
   width: 25px; height: 25px;
 }
 
-#titleBoxAI{
+.bold{
   font-family: Google-Bold;
-  font-size: 18px;
 }
 
 #textBoxAI{
   grid-row: 2/3;
   grid-column: 2/3;
-  font-family: Google-Regular;
-  font-size: 18px;
+  max-height: 400px;
+  white-space: pre-line;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 .spinning {
-  animation: spin-with-pause 2.5s ease infinite; 
+  animation: spin 3s ease infinite; 
 }
 
-@keyframes spin-with-pause {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(360deg);
+  20% {
+    transform: rotate(-20deg);
   }
   100% {
     transform: rotate(360deg);

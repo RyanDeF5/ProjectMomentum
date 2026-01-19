@@ -20,6 +20,8 @@
   let summary_page  = new SummaryPage();
   let animation_engine = new AnimationEngine();
 
+  // document.getElementById("rating").textContent = " TEST "; 
+
   goToPageNoAnimation("summaryPage");
 
   function calculate(){

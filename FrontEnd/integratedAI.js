@@ -7,13 +7,13 @@ export class geminiAI{
     this.classBox = document.getElementById("classBox");
     this.geminiStar = document.getElementById("geminiStar");
     this.titleBoxAI = document.getElementById("titleBoxAI");
+    this.rating = document.getElementById("rating");
     this.textBoxAI = document.getElementById("textBoxAI");
     this.response; 
   }
 
   async start(){
     this.titleBoxAI.textContent = " Gemini Is Working... "
-    this.textBoxAI.textContent = " Generating Response "
 
     // Set star animation
     this.geminiStar.classList.remove('spinning');
@@ -30,13 +30,36 @@ export class geminiAI{
 
   // Rank Box Code 
   calculateScore(){
-    this.scoreBox.textContent = `${this.response.score}/1200`
+    this.scoreBox.textContent = `${this.response.score}/2000`
+    let classRank = ""; 
+    let score = Number(this.response.score);
+
+    if (isNaN(score)) {
+      classRank = "NO";
+    } else if (score > 1750) {
+      classRank = "S";
+    } else if (score > 1450) {
+      classRank = "A";
+    } else if (score > 1250) {
+      classRank = "B";
+    } else if (score > 1100) {
+      classRank = "C";
+    } else {
+      classRank = "D";
+    }
+
+    console.log(classRank);
+    this.classBox.textContent = classRank;
   }
 
   // Ai writes response into textbox
-  deliverResponse(){
-    this.titleBoxAI.textContent = `Gemini Says: ${(this.response.rating).toUpperCase()}`;
-    this.textBoxAI.textContent = this.response.insight;
+  deliverResponse(){ 
+    this.titleBoxAI.innerHTML = `Gemini Says: <span class="bold">${(this.response.rating).toUpperCase()}</span>`;
+
+    let formattedText = this.response.insight.replace(/[#]/g, '\n');
+    formattedText = formattedText.replace(/[:]/g, ':\n');
+    formattedText = formattedText.replace(/[&]/g, '\n');
+    this.textBoxAI.textContent = formattedText;
   }
 
 }
