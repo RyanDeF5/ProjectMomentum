@@ -31,7 +31,7 @@
     stockData.fullName = "Not Identified";
     summary_page.resetBars();
     start_page.getAllFields();
-    start_page.clearAllFields(); 
+    // start_page.clearAllFields(); 
     summary_page.calculateSummary();
     summary_page.gemini.clearFields(); 
     goToPage("summaryPage");
@@ -68,7 +68,7 @@
     stockData.fullName = data.fullName;
 
     summary_page.resetBars();
-    start_page.clearAllFields(); 
+    // start_page.clearAllFields(); 
     summary_page.calculateSummary();
     summary_page.gemini.clearFields(); 
     goToPage("summaryPage");

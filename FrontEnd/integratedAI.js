@@ -11,7 +11,7 @@ export class geminiAI{
     this.textBoxAI = document.getElementById("textBoxAI");
     this.progressBarContainers = document.querySelectorAll(".geminiProgressContainer");
     console.log("Found bars:", this.progressBarContainers.length);
-    this.dryRun = true; 
+    this.dryRun = false; 
     this.response; 
   }
 

@@ -39,9 +39,11 @@ app.post("/analyze", async (req, res) => {
     const quote = await yahooFinance.quote(symbol.toUpperCase());
 
     // Determine the "True" live price based on whether the market is open or in pre/post sessions
-    if (state === "Pre-Market"){livePrice = quote.preMarketPrice}
-    else if (state === "Market Open") {livePrice = quote.regularMarketPrice}
+    if (state === "PRE-MARKET"){livePrice = quote.preMarketPrice}
+    else if (state === "MARKET OPEN") {livePrice = quote.regularMarketPrice}
     else {livePrice = quote.regularMarketPrice}
+
+    console.log(quote.preMarketPrice);
 
     const summary = await yahooFinance.quoteSummary(symbol, { 
       modules: [ "defaultKeyStatistics" ] 
@@ -88,6 +90,8 @@ app.post("/generate", async (req, res) => {
       - 0: High risk, no volume, or "bag holder" setup.
 
       if stock ticker is STCK treat it like a test stock
+
+      if a stock has a 0 float, that means that the float was not found. 
       
       Return ONLY a JSON object with these keys:
       {
@@ -102,7 +106,8 @@ app.post("/generate", async (req, res) => {
     const text = result.response.text()
     console.log(text);
 
-    res.json(JSON.parse(text));
+    const cleanedJson = JSON.parse(text.trim());
+    res.json(cleanedJson);
 
   } catch (err) {
     console.error("Google Gemini Error:", err);

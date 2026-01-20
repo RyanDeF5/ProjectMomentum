@@ -31,7 +31,8 @@
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
     "node-fetch": "^3.3.2",
-    "proxy-from-env": "^1.1.0"
+    "proxy-from-env": "^1.1.0",
+    "yahoo-finance2": "^3.11.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
