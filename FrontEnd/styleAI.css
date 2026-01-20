@@ -46,15 +46,12 @@
 }
 
 .spinning {
-  animation: spin 3s ease infinite; 
+  animation: spin 3s linear infinite; 
 }
 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-  }
-  40% {
-    transform: rotate(-40deg);
   }
   100% {
     transform: rotate(360deg);

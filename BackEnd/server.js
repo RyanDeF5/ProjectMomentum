@@ -16,7 +16,7 @@ app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({ 
-  model: "gemini-2.5-flash-lite", // gemini-3-flash-preview, gemini-2.5-flash, gemini-2.5-flash-lite
+  model: "gemini-3-flash-preview", // gemini-3-flash-preview, gemini-2.5-flash
   generationConfig: { responseMimeType: "application/json" }
 });
 
