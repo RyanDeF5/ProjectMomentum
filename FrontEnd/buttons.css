@@ -57,6 +57,11 @@
   grid-row: 4 / 5;
 }
 
+#dryRunButton{
+  font-size: 21px;
+  grid-column: span 2;
+}
+
 #backButton{
   margin-top: 50px;
   font-size: 21px;

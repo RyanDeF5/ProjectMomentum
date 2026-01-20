@@ -14,15 +14,15 @@
   setTimeout (() => {start_page.enableBuyTypeButtons();}, 1000)
 })
   document.getElementById("fakeFillButton").addEventListener("click", fakeFill)
+  document.getElementById("dryRunButton").addEventListener("click", toggleDryRun)
 
   // Instansiate Classes:
   let start_page = new StartPage();
   let summary_page  = new SummaryPage();
   let animation_engine = new AnimationEngine();
 
-  // document.getElementById("rating").textContent = " TEST "; 
 
-  goToPageNoAnimation("summaryPage");
+  // goToPageNoAnimation("summaryPage");
 
   function calculate(){
     if (document.querySelector(".entryField").value === ""){
@@ -33,6 +33,7 @@
     start_page.getAllFields();
     start_page.clearAllFields(); 
     summary_page.calculateSummary();
+    summary_page.gemini.clearFields(); 
     goToPage("summaryPage");
   }
 
@@ -69,6 +70,7 @@
     summary_page.resetBars();
     start_page.clearAllFields(); 
     summary_page.calculateSummary();
+    summary_page.gemini.clearFields(); 
     goToPage("summaryPage");
   }
 
@@ -83,7 +85,6 @@
   function goToPage(targetPageId) {
     const currentPage = document.querySelector('.page.active');
     const targetPage = document.getElementById(targetPageId);
-
     animation_engine.HidePage(currentPage);
 
     setTimeout(() => {
@@ -120,6 +121,11 @@
 
   function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function toggleDryRun(){
+    summary_page.gemini.toggleDryRun();
+    document.getElementById("dryRunButton").textContent = `(DEV OPTION) AI DRY RUN: ${(String(summary_page.gemini.dryRun)).toUpperCase()}`
   }
 
   function playAnimationReval(pageID){

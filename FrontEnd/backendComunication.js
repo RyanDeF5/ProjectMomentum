@@ -29,4 +29,16 @@ export async function generateAIResponse() {
   return data; // or: return summarize(data) if you want the processed result
 }
 
+export async function generateExampleAIResponse() {
+  const res = await fetch("http://localhost:3000/generateExample", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({stockData})
+  });
+
+  if (!res.ok) throw new Error(`Network response was not ok: ${res.status}`);
+  const data = await res.json();
+  console.log(data);
+  return data; // or: return summarize(data) if you want the processed result
+}
 

@@ -84,6 +84,7 @@
                   <button id="submitButton" class="themeButton typeBuy">SUBMIT</button>
                   <button id="SwitchPage" class="themeButton typeNormal">(DEV OPTION) GO TO PAGE 2</button>
                   <button id="fakeFillButton" class="themeButton typeNormal">(DEV OPTION) FILL ALL FIELDS</button>
+                  <button id="dryRunButton" class="themeButton typeNormal">(DEV OPTION) AI DRY RUN: TRUE</button>
                 </div>
               </div>
             </div>
@@ -117,7 +118,21 @@
             <div class="animatedCloak topdown aiResBox">
                 <img id="geminiStar" src="/images/geminiStar.png">
                 <div id="titleBoxAI">Google Gemini Summary</div>
-                <div id="textBoxAI"></div>
+                <div id="textBoxAIContainer">
+                  <div id="textBoxAI"></div>
+                  <div class="geminiProgressContainer">
+                    <div class="geminiProgressBar"></div>
+                  </div>
+                  <div class="geminiProgressContainer">
+                    <div class="geminiProgressBar"></div>
+                  </div>
+                  <div class="geminiProgressContainer">
+                    <div class="geminiProgressBar"></div>
+                  </div>
+                  <div class="geminiProgressContainer short">
+                    <div class="geminiProgressBar"></div>
+                  </div>
+                </div>
             </div>
             
             <div class="animatedContainer stockNameContainer">

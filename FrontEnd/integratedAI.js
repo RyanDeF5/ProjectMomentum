@@ -1,5 +1,5 @@
 
-import {generateAIResponse} from './backendComunication.js';
+import {generateAIResponse, generateExampleAIResponse} from './backendComunication.js';
 
 export class geminiAI{
   constructor() {
@@ -9,6 +9,9 @@ export class geminiAI{
     this.titleBoxAI = document.getElementById("titleBoxAI");
     this.rating = document.getElementById("rating");
     this.textBoxAI = document.getElementById("textBoxAI");
+    this.progressBarContainers = document.querySelectorAll(".geminiProgressContainer");
+    console.log("Found bars:", this.progressBarContainers.length);
+    this.dryRun = true; 
     this.response; 
   }
 
@@ -18,9 +21,14 @@ export class geminiAI{
     // Set star animation
     this.geminiStar.classList.remove('spinning');
     this.geminiStar.classList.add('spinning');
+    // Set text animation 
+    this.setTextAnimationOn();
 
-    this.response = await generateAIResponse(); 
+    if (this.dryRun === true) {this.response = await generateExampleAIResponse();} 
+    else {this.response = await generateAIResponse();} 
+
     this.geminiStar.classList.remove('spinning');
+    this.setTextAnimationOff();
 
     console.log(this.response);
 
@@ -48,7 +56,6 @@ export class geminiAI{
       classRank = "D";
     }
 
-    console.log(classRank);
     this.classBox.textContent = classRank;
   }
 
@@ -60,6 +67,33 @@ export class geminiAI{
     formattedText = formattedText.replace(/[:]/g, ':\n');
     formattedText = formattedText.replace(/[&]/g, '\n');
     this.textBoxAI.textContent = formattedText;
+  }
+
+  clearFields(){
+    this.scoreBox.textContent = "0/2000"
+    this.classBox.textContent = "?";
+    this.titleBoxAI.textContent = "Google Gemini Summary";
+    this.textBoxAI.textContent = "";
+  }
+
+  setTextAnimationOn(){
+    this.progressBarContainers.forEach((barContainer, index) => {
+      const delay = index * 100;
+
+    setTimeout(() => {
+      barContainer.style.display = "block";
+    }, delay);
+    });
+  }
+
+  setTextAnimationOff(){
+    this.progressBarContainers.forEach(barContainer => {
+      barContainer.style.display = "none";
+    });
+  }
+
+  toggleDryRun(){
+    this.dryRun = (this.dryRun === true) ? false : true;
   }
 
 }
