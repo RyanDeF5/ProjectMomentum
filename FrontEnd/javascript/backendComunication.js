@@ -3,7 +3,7 @@
 
 
 export async function fetchStockData(symbol) {
-  const res = await fetch("http://localhost:3000/analyze", {
+  const res = await fetch("http://100.90.167.69:3000/analyze", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ 
@@ -18,7 +18,7 @@ export async function fetchStockData(symbol) {
 }
 
 export async function generateAIResponse() {
-  const res = await fetch("http://localhost:3000/generate", {
+  const res = await fetch("http://100.90.167.69:3000/generate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({stockData})
@@ -30,7 +30,7 @@ export async function generateAIResponse() {
 }
 
 export async function generateExampleAIResponse() {
-  const res = await fetch("http://localhost:3000/generateExample", {
+  const res = await fetch("http://100.90.167.69:3000/generateExample", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({stockData})

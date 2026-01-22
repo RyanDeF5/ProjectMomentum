@@ -1,0 +1,24 @@
+
+#To start the server:
+pm2 start server.js --name "<Name Goes Here>"
+
+#To stop the server 
+pm2 stop <Name Goes Here>
+
+#To show info about running processes 
+pm2 list 
+
+#To show real time logs
+pm2 logs <Name Goes Here>
+
+#Dashboard view 
+pm2 monit
+
+#To restart 
+pm2 restart <Name Goes Here>
+
+#For Zero Downtime Reload:
+pm2 reload <Name Goes Here>
+
+#To erase/forget 
+pm2 delete <Name Goes Here>

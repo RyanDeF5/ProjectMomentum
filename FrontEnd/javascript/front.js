@@ -54,7 +54,8 @@
       data = await fetchStockData(symbol);
     } catch (err) {
       console.error("Failed to fetch stock data:", err);
-      alert("Failed to fetch stock data. Please try again.");
+      alert(`Something went wrong with fetching the stock data \n Error: ${err}`);
+      start_page.enableBuyTypeButtons();
       return;
     }
 

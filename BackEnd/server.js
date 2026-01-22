@@ -92,13 +92,32 @@ app.post("/generate", async (req, res) => {
       if stock ticker is STCK treat it like a test stock
 
       if a stock has a 0 float, that means that the float was not found. 
+
+      Use the following table to determine a rating:
+      Rank,Market Direction,Intuitive Signal
+      Overheating = Up (Too fast),Stop / Caution
+      Strong = Up (Healthy), Go / Buy
+      Stable = Sideways,Wait / Neutral
+      Weak = Down (Slowly),Avoid
+      Crashing = Down (Fast),Danger
       
+      Use the following information to determine the insight:
+      Provide a multi-sentence 'Market Insight' focused on the following:
+
+      Conviction: Based on the price-to-volume ratio, are buyers aggressive or just catching a bounce?
+
+      Efficiency: Is the stock moving easily, or is it struggling to gain ground despite high volume?
+
+      If stock is doing well:
+      Drawbacks: If the stock is doing well what are some potential drawbacks to keep in mind.
+
+      Do NOT use flowery language.
+
       Return ONLY a JSON object with these keys:
       {
         "score": number,
-        "rating": "Strong Buy" | "Watch" | "Avoid",
-        "insight": If there is any recent news that could be driving the stock higher please list them otherwise list a few 
-        sentences explaining why (add in-text newlines when appropriate)"
+        "rating": "Overheating" | "Strong" | "Stable" | "Weak" | "Crashing",
+        "insight": See criteria above (add in-text newlines when appropriate because this will be placed into a text box, please add a space between Conviction/Efficiency/Drawbacks)"
       }
     `;
 
