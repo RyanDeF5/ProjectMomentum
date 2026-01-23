@@ -32,6 +32,8 @@
     "mime-types": "^2.1.35",
     "node-fetch": "^3.3.2",
     "proxy-from-env": "^1.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "yahoo-finance2": "^3.11.2"
   },
   "scripts": {
@@ -40,5 +42,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3"
+  }
 }

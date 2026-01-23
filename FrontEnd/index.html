@@ -11,7 +11,6 @@
       <link rel="stylesheet" href="css/animations.css">
       <link rel="stylesheet" href="css/styleAI.css">
       <link rel="stylesheet" href="css/images.css">
-      <script type="module" src="javascript/front.js" defer></script>
   </head>
   <body id="body">
     <div id="appContainer">
@@ -59,8 +58,11 @@
               <div class="animatedContainer">
                   <div id="superFieldRow">
 
+                    <!-- Original Entry Field For Volume -->
                     <div class="entryLabel" id="superAverageVolumeText">CURRENT VOLUME:</div>
                     <input class="entryFieldNumberForSuper" id="superAverageVolume" placeholder="ENTER CURRENT VOLUME">
+                    <div id="reactRoot"></div>
+
 
                     <div class="entryLabel" id="superTicker">STOCK TICKER/SYMBOL:</div>
                     <input class="entryFieldForSuper" id="superSymbol" placeholder="E.G. AAPL, MSFT">
@@ -198,5 +200,6 @@
         </section>
       </main>
     </div>
+    <script type="module" src="javascript/front.js" defer></script>
   </body>
 </html>
